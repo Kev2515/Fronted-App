@@ -16,6 +16,8 @@ public class Registro extends AppCompatActivity {
     private Button btnRegistro;
     private EditText textEmail;
     private EditText textPassword;
+    private EditText textPassword2;
+
 
 
     @Override
@@ -40,6 +42,7 @@ public class Registro extends AppCompatActivity {
     private void bindUi() {
         textEmail = (EditText) findViewById(R.id.editText);
         textPassword = (EditText) findViewById(R.id.editText2);
+        textPassword = (EditText) findViewById(R.id.editText3);
         btnRegistro = (Button) findViewById(R.id.button);
 
     }

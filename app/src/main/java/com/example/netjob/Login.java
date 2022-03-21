@@ -44,6 +44,8 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    //prueba 1
+
     private void bindUi() {
         textEmail = (EditText) findViewById(R.id.editText);
         textPassword = (EditText) findViewById(R.id.editText2);

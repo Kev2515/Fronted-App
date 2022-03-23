@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NetJob">
         <activity
+            android:name=".PerfilPropio"
+            android:exported="false" />
+        <activity
             android:name=".RecuperarC"
             android:exported="false" />
         <activity

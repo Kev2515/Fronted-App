@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuscarServicio">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:alpha="0.8"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="158dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="36dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="611dp"
+        android:alpha="0.8"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints">
+
+
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:src="@drawable/inicio"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:src="@drawable/buzon"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:src="@drawable/buscar"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:src="@drawable/favorito"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:src="@drawable/perfil"></ImageButton>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/categoriaTV"
+        android:layout_width="208dp"
+        android:layout_height="20dp"
+        android:text="Categoria"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-9dp"
+        tools:layout_editor_absoluteY="161dp" />
+
+    <EditText
+        android:id="@+id/categoriaET"
+        android:layout_width="225dp"
+        android:layout_height="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textAlignment="textStart"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="161dp" />
+
+    <TextView
+        android:id="@+id/disponibilidadTV"
+        android:layout_width="208dp"
+        android:layout_height="20dp"
+        android:text="Disponibilidad"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <EditText
+        android:id="@+id/disponibilidadET"
+        android:layout_width="225dp"
+        android:layout_height="20dp"
+        android:ems="10"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:textAlignment="textStart"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <TextView
+        android:id="@+id/distanciaTV"
+        android:layout_width="208dp"
+        android:layout_height="20dp"
+        android:text="Distancia"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="227dp" />
+
+    <EditText
+        android:id="@+id/distanciaET"
+        android:layout_width="225dp"
+        android:layout_height="20dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textAlignment="textStart"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="227dp" />
+
+    <TextView
+        android:id="@+id/precioTV"
+        android:layout_width="208dp"
+        android:layout_height="20dp"
+        android:text="Rango de Precio"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="260dp" />
+
+    <EditText
+        android:id="@+id/precioET"
+        android:layout_width="225dp"
+        android:layout_height="20dp"
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textAlignment="textStart"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="260dp" />
+
+    <TextView
+        android:id="@+id/contengaTV"
+        android:layout_width="208dp"
+        android:layout_height="20dp"
+        android:text="Que contenga"
+        android:textAlignment="center"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="293dp" />
+
+    <EditText
+        android:id="@+id/contengaET"
+        android:layout_width="225dp"
+        android:layout_height="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textAlignment="textStart"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="153dp"
+        tools:layout_editor_absoluteY="293dp" />
+
+    <Button
+        android:id="@+id/bucsarServicios"
+        android:layout_width="300dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/button_rounded"
+        android:text="Buscar Servicios"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

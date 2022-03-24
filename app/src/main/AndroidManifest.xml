@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NetJob">
         <activity
+            android:name=".HistorialContratos"
+            android:exported="false" />
+        <activity
+            android:name=".FormaPago"
+            android:exported="false" />
+        <activity
+            android:name=".BuscarServicio"
+            android:exported="false" />
+        <activity
             android:name=".PerfilPropio"
             android:exported="false" />
         <activity

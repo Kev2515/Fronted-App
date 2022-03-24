@@ -8,10 +8,9 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
         android:alpha="0.8"
         android:background="@android:color/darker_gray"
         android:gravity="center"
@@ -34,16 +33,16 @@
             app:civ_border_width="2dp"
             app:layout_constraintEnd_toStartOf="@+id/button"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="10dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image2"
             android:layout_width="24dp"
             android:layout_height="29dp"
             android:layout_marginStart="250dp"
-            android:layout_marginEnd="118dp"
-            android:src="@drawable/lapiz"
+            android:layout_marginEnd="132dp"
+            android:src="@drawable/favorito"
             app:civ_border_color="#121212"
             app:civ_border_width="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -53,73 +52,41 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="93dp"
+            android:layout_width="116dp"
             android:layout_height="36dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/button_rounded"
-            android:text="@string/standard"
+            android:text="@string/especialista"
             android:textAlignment="center"
             android:textSize="10sp"
             app:layout_constraintBottom_toTopOf="@+id/profile_image2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/profile_image"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="378dp"
-        android:layout_height="328dp"
+        android:layout_width="382dp"
+        android:layout_height="307dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="72dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:layout_marginBottom="190dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="412dp"
-        android:layout_height="108dp"
-        android:alpha="0.8"
-        android:background="@android:color/darker_gray"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="318dp"
-            android:layout_height="75dp"
-            android:text="Historial de Contratos"
-            android:textAlignment="textStart"
-            tools:layout_editor_absoluteX="2dp"
-            tools:layout_editor_absoluteY="489dp"></Button>
-
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:src="@drawable/archivos"></ImageButton>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0.8"
@@ -129,8 +96,9 @@
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
         tools:ignore="MissingConstraints">
 
         <ImageButton
@@ -175,6 +143,5 @@
 
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

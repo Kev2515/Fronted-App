@@ -41,7 +41,7 @@ public class Inicio extends AppCompatActivity {
 
     }
     private void goToLogin(){
-        Intent intent = new Intent(Inicio.this, Home.class);
+        Intent intent = new Intent(Inicio.this, Login.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
@@ -52,4 +52,3 @@ public class Inicio extends AppCompatActivity {
     }
 }
 
-//esto es una prueba

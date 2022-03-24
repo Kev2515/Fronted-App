@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.548" />
+        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/drawable/button_rounded.xml" value="0.548" />
         <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/drawable/edit_text_background.xml" value="0.548" />
+        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.548" />
         <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_home.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_inicio.xml" value="0.511322463768116" />
         <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_login.xml" value="0.5144927536231884" />

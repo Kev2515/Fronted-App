@@ -8,7 +8,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout4"
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="19dp"
@@ -41,17 +41,14 @@
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="363dp"
-        android:layout_height="374dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="329dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="26dp"
         android:layout_marginTop="21dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:layout_marginEnd="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -59,8 +56,8 @@
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="80dp"
         android:background="@drawable/button_rounded"
         android:text="Guardar Servicio"
         android:textAlignment="center"
@@ -69,7 +66,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
@@ -85,7 +81,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
         tools:ignore="MissingConstraints">
 
         <ImageButton
@@ -127,8 +122,5 @@
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
             android:src="@drawable/perfil"></ImageButton>
-
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

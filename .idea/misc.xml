@@ -3,20 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.548" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/drawable/button_rounded.xml" value="0.548" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/drawable/edit_text_background.xml" value="0.548" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.548" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_buzon.xml" value="0.511322463768116" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_detalle_servicio.xml" value="0.5" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_favoritos.xml" value="0.5546875" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_home.xml" value="0.4466666666666667" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_inicio.xml" value="0.511322463768116" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_lista_servicios.xml" value="0.5" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_login.xml" value="0.5144927536231884" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_mis_servicios.xml" value="0.5" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/activity_servicio.xml" value="0.5546875" />
-        <entry key="..\:/Users/Alejandro/Desktop/Oficiales/Fronted-App/app/src/main/res/layout/grid_categorias.xml" value="0.511322463768116" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Android Ejercicios/app/src/main/res/drawable/button_rounded.xml" value="0.361" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Android Ejercicios/app/src/main/res/layout/activity_inicio.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Android Ejercicios/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
@@ -25,21 +11,24 @@
         <entry key="..\:/Users/Kevin Salazar/Desktop/Android Ejercicios/app/src/main/res/layout/activity_registro.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/drawable/button_rounded.xml" value="0.1445" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/drawable/button_roundedall.xml" value="0.1445" />
-        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_editar_perfil.xml" value="0.5" />
+        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_buscar_servicio.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_editar_perfil.xml" value="0.33" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_favoritos.xml" value="0.33" />
+        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_forma_pago.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_historial_contratos.xml" value="0.3482789855072464" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_inicio.xml" value="0.25" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_perfil_privado.xml" value="0.3482789855072464" />
-        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_perfil_propio.xml" value="0.5" />
-        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_perfil_visitado.xml" value="0.9" />
+        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_perfil_propio.xml" value="0.25" />
+        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_perfil_visitado.xml" value="0.33" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_recuperar_c.xml" value="0.25" />
         <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_registro.xml" value="0.25" />
-        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_servicio.xml" value="0.33" />
+        <entry key="..\:/Users/Kevin Salazar/Desktop/Fronted-App/app/src/main/res/layout/activity_servicio.xml" value="0.25" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

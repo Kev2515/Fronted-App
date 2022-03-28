@@ -49,7 +49,7 @@ public class Login extends AppCompatActivity {
         textEmail = (EditText) findViewById(R.id.editText);
         textPassword = (EditText) findViewById(R.id.editText2);
         btnLogin = (Button) findViewById(R.id.button);
-        textView4 = (TextView) findViewById(R.id.textView4);
+        textView4 = (TextView) findViewById(R.id.textView3);
 
     }
 

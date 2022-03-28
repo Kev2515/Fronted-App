@@ -52,4 +52,3 @@ public class Inicio extends AppCompatActivity {
     }
 }
 
-//esto es una prueba

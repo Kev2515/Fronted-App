@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NetJob">
         <activity
+            android:name=".Buzon"
+            android:exported="false" />
+        <activity
+            android:name=".MisServicios"
+            android:exported="false" />
+        <activity
+            android:name=".ListaServicios"
+            android:exported="false" />
+        <activity
+            android:name=".DetalleServicio"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
             android:name=".Favoritos"
             android:exported="false" />
         <activity

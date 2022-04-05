@@ -8,14 +8,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class GridAdapter extends BaseAdapter {
+public class CategoriaAdapter extends BaseAdapter {
     Context context;
     String[] categoriaName;
     int[] categoriaImage;
 
     LayoutInflater inflater;
 
-    public GridAdapter(Context context, String[] categoriaName, int[] categoriaImage) {
+    public CategoriaAdapter(Context context, String[] categoriaName, int[] categoriaImage) {
         this.context = context;
         this.categoriaName = categoriaName;
         this.categoriaImage = categoriaImage;
@@ -43,7 +43,7 @@ public class GridAdapter extends BaseAdapter {
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null){
-            convertView = inflater.inflate(R.layout.grid_categorias, null);
+            convertView = inflater.inflate(R.layout.categorias, null);
         }
 
         ImageView imageView = convertView.findViewById(R.id.categoriaImage);

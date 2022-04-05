@@ -43,7 +43,7 @@ public class CategoriaAdapter extends BaseAdapter {
             inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null){
-            convertView = inflater.inflate(R.layout.categorias, null);
+            convertView = inflater.inflate(R.layout.categoria, null);
         }
 
         ImageView imageView = convertView.findViewById(R.id.categoriaImage);

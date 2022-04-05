@@ -22,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
         btnInvitado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToLogin();
+                goToInvitado();
             }
         });
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToRegistro();
+                goToAcceso();
             }
         });
     }
@@ -39,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
         btnRegistro = (Button) findViewById(R.id.button2);
 
     }
-    private void goToLogin(){
-        Intent intent = new Intent(MainActivity.this, Inicio.class);
+    private void goToInvitado(){
+        Intent intent = new Intent(MainActivity.this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-    private void goToRegistro(){
+    private void goToAcceso(){
         Intent intent = new Intent(MainActivity.this, Inicio.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

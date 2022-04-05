@@ -22,7 +22,7 @@ public class Home extends AppCompatActivity {
         String[] categoriaName = {"Albañiles", "Cuidadores", "Electricistas", "Fontaneros", "Jardineros", "Profesores particulares"};
         int[] categoriaImage = {R.drawable.albaniles, R.drawable.ancianos, R.drawable.electricistas, R.drawable.fontaneros, R.drawable.jardineros, R.drawable.profesor_particular };
 
-        GridAdapter gridAdapter = new GridAdapter(Home.this, categoriaName, categoriaImage);
+        CategoriaAdapter gridAdapter = new CategoriaAdapter(Home.this, categoriaName, categoriaImage);
         binding.gridView.setAdapter(gridAdapter);
 
         binding.gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

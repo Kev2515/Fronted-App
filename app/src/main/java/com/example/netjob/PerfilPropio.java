@@ -64,17 +64,17 @@ public class PerfilPropio extends AppCompatActivity {
         Perfil = findViewById(R.id.imageButton4);
     }
     private void goToInicio(){
-        Intent intent = new Intent(PerfilPropio.this, EditarPerfil.class);
+        Intent intent = new Intent(PerfilPropio.this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
     private void goToBuzon(){
-        Intent intent = new Intent(PerfilPropio.this, EditarPerfil.class);
+        Intent intent = new Intent(PerfilPropio.this, Buzon.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
     private void goToBuscar(){
-        Intent intent = new Intent(PerfilPropio.this, EditarPerfil.class);
+        Intent intent = new Intent(PerfilPropio.this, ListaServicios.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
@@ -84,7 +84,7 @@ public class PerfilPropio extends AppCompatActivity {
         startActivity(intent);
     }
     private void goToPerfil(){
-        Intent intent = new Intent(PerfilPropio.this, BuscarServicio.class);
+        Intent intent = new Intent(PerfilPropio.this, PerfilPropio.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

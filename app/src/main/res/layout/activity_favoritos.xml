@@ -47,7 +47,6 @@
         android:layout_marginBottom="21dp"
         android:text="Mis Favoritos"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
         app:layout_constraintEnd_toStartOf="@+id/profile_image4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
@@ -63,165 +62,24 @@
         android:src="@drawable/favorito"
         app:civ_border_color="#121212"
         app:civ_border_width="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:ignore="MissingConstraints" />
 
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="106dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
-        app:layout_constraintEnd_toStartOf="@+id/listView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/button_rounded"
-        tools:ignore="MissingConstraints" />
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="251dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/listView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image4"
-        tools:ignore="MissingConstraints" />
-
-    <ListView
-        android:id="@+id/listView2"
-        android:layout_width="251dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="19dp"
-        app:layout_constraintBottom_toTopOf="@+id/listView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton6"
-        app:layout_constraintTop_toBottomOf="@+id/listView"
-        tools:ignore="MissingConstraints" />
-
-    <ListView
-        android:id="@+id/listView3"
-        android:layout_width="251dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/listView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton7"
-        app:layout_constraintTop_toBottomOf="@+id/listView2"
-        tools:ignore="MissingConstraints" />
-
-    <ListView
-        android:id="@+id/listView4"
-        android:layout_width="251dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/listView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton8"
-        app:layout_constraintTop_toBottomOf="@+id/listView3"
-        tools:ignore="MissingConstraints" />
-
-    <ListView
-        android:id="@+id/listView5"
-        android:layout_width="251dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton9"
-        app:layout_constraintTop_toBottomOf="@+id/listView4"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="106dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton7"
-        app:layout_constraintEnd_toStartOf="@+id/listView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5"
-        app:srcCompat="@drawable/button_rounded"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="106dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton8"
-        app:layout_constraintEnd_toStartOf="@+id/listView3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6"
-        app:srcCompat="@drawable/button_rounded"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="106dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton9"
-        app:layout_constraintEnd_toStartOf="@+id/listView4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7"
-        app:srcCompat="@drawable/button_rounded"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="106dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
-        app:layout_constraintEnd_toStartOf="@+id/listView5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton8"
-        app:srcCompat="@drawable/button_rounded"
-        tools:ignore="MissingConstraints" />
-
     <LinearLayout
-        android:id="@+id/linearLayout6"
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
         android:alpha="0.8"
-        android:background="@android:color/darker_gray"
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView5"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="661dp">
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -262,11 +120,36 @@
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
             android:src="@drawable/perfil"></ImageButton>
-
-
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="195dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="106dp"
+                android:layout_height="69dp"
+                app:srcCompat="@drawable/button_rounded"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="10dp"
+                tools:layout_editor_absoluteY="237dp" />
+
+            <ListView
+                android:layout_width="251dp"
+                android:layout_height="67dp"
+                android:layout_marginLeft="5dp"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

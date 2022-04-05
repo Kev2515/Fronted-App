@@ -18,6 +18,8 @@ public class Registro extends AppCompatActivity {
     private EditText textPassword;
     private EditText textPassword2;
 
+    //Falta validar que las contraseñas sean iguales
+
 
 
     @Override
@@ -25,7 +27,7 @@ public class Registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
         bindUi();
-// prueba 1
+
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,7 +44,7 @@ public class Registro extends AppCompatActivity {
     private void bindUi() {
         textEmail = (EditText) findViewById(R.id.editText);
         textPassword = (EditText) findViewById(R.id.editText2);
-        textPassword = (EditText) findViewById(R.id.editText3);
+        textPassword2 = (EditText) findViewById(R.id.editText3);
         btnRegistro = (Button) findViewById(R.id.button);
 
     }
@@ -67,7 +69,7 @@ public class Registro extends AppCompatActivity {
     }
 
     private void goToMain(){
-        Intent intent = new Intent(Registro.this, MainActivity.class);
+        Intent intent = new Intent(Registro.this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

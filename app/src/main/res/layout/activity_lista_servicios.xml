@@ -31,23 +31,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
+            <GridView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="10dp">
-                <ImageButton
-                    android:layout_width="106dp"
-                    android:layout_height="69dp"
-                    app:srcCompat="@drawable/button_rounded"
-                    tools:ignore="MissingConstraints" />
-
-                <ListView
-                    android:layout_width="251dp"
-                    android:layout_height="67dp"
-                    tools:ignore="MissingConstraints"
-                    android:layout_marginLeft="5dp"/>
-            </LinearLayout>
+                android:id="@+id/servicioOfrecido"
+                android:numColumns="1"/>
         </ScrollView>
     </LinearLayout>
 

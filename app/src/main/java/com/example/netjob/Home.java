@@ -9,7 +9,11 @@ import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.netjob.Model.Categoria;
 import com.example.netjob.databinding.ActivityHomeBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Home extends AppCompatActivity {
 
@@ -27,10 +31,16 @@ public class Home extends AppCompatActivity {
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String[] categoriaName = {"Albañiles", "Cuidadores", "Electricistas", "Fontaneros", "Jardineros", "Profesores particulares"};
-        int[] categoriaImage = {R.drawable.albaniles, R.drawable.ancianos, R.drawable.electricistas, R.drawable.fontaneros, R.drawable.jardineros, R.drawable.profesor_particular};
+        List<Categoria> categorias = new ArrayList<>();
 
-        CategoriaAdapter gridAdapter = new CategoriaAdapter(Home.this, categoriaName, categoriaImage);
+        categorias.add(new Categoria("Albañiles", R.drawable.albaniles));
+        categorias.add(new Categoria("Cuidadores", R.drawable.ancianos));
+        categorias.add(new Categoria("Electricistas", R.drawable.electricistas));
+        categorias.add(new Categoria("Fontaneros", R.drawable.fontaneros));
+        categorias.add(new Categoria("Jardineros", R.drawable.jardineros));
+        categorias.add(new Categoria("Profesores", R.drawable.profesor_particular));
+
+        CategoriaAdapter gridAdapter = new CategoriaAdapter(Home.this, R.layout.categoria, categorias);
         binding.gridView.setAdapter(gridAdapter);
 
 
@@ -39,7 +49,7 @@ public class Home extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 bindUi();
 
-                Toast.makeText(Home.this, "Buscando " + categoriaName[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(Home.this, "Buscando " + categorias.get(position).getName(), Toast.LENGTH_SHORT).show();
 
 
                 Inicio.setOnClickListener(new View.OnClickListener() {

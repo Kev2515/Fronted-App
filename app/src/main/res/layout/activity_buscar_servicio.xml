@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="611dp"
-        android:alpha="0.8"
+        android:alpha="1"
         android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"

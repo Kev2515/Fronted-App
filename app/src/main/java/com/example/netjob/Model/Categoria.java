@@ -3,8 +3,7 @@ package com.example.netjob.Model;
 public class Categoria {
 
     String name;
-    String image;
-    String imageBmp;
+    int image;
 
     public String getName() {
         return name;
@@ -14,20 +13,17 @@ public class Categoria {
         this.name = name;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(int image) {
         this.image = image;
     }
 
-    public String getImageBmp() {
-        return imageBmp;
-    }
-
-    public void setImageBmp(String imageBmp) {
-        this.imageBmp = imageBmp;
+    public Categoria(String name, int image) {
+        this.name = name;
+        this.image = image;
     }
 }
 

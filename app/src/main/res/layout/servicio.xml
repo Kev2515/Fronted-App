@@ -13,36 +13,31 @@
 
         <ImageView
             android:layout_width="80dp"
-            android:layout_height="65dp"
+            android:layout_height="80dp"
             android:layout_margin="10dp"
             android:background="@drawable/edit_text_background"
             android:id="@+id/servicioImage"/>
 
         <LinearLayout
             android:layout_width="250dp"
-            android:layout_height="65dp"
+            android:layout_height="80dp"
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Línea 1"
+                android:hint="Linea 1"
+                android:textSize="14dp"
                 android:id="@+id/linea1"/>
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Línea 2"
+                android:hint="Linea 2"
+                android:textSize="14dp"
                 android:id="@+id/linea2"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="Línea 3"
-                android:id="@+id/linea3"/>
-
         </LinearLayout>
 
 

@@ -5,28 +5,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.netjob.Model.Servicio;
 
-import com.example.netjob.Model.Categoria;
 
 import java.util.List;
 
-public class CategoriaAdapter extends ArrayAdapter {
+public class ServicioAdapter extends ArrayAdapter {
 
     Context context;
     int itemLayout;
-    List<Categoria> categorias;
+    List<Servicio> servicios;
 
-    public CategoriaAdapter(@NonNull Context context, int resource, @NonNull List<Categoria> objects) {
+    public ServicioAdapter(@NonNull Context context, int resource, @NonNull List<Servicio> objects) {
         super(context, resource, objects);
         this.context = context;
         itemLayout = resource;
-        categorias = objects;
+        servicios = objects;
     }
 
     @NonNull
@@ -37,13 +37,15 @@ public class CategoriaAdapter extends ArrayAdapter {
             convertView = layoutInflater.inflate(itemLayout, parent, false);
         }
 
+        EditText linea1 = convertView.findViewById(R.id.linea1);
+        linea1.setText(servicios.get(position).getLinea1());
 
-        TextView name = convertView.findViewById(R.id.categoriaName);
-        name.setText(categorias.get(position).getName());
+        EditText linea2 = convertView.findViewById(R.id.linea2);
+        linea1.setText(servicios.get(position).getLinea2());
 
 
-        ImageView image = convertView.findViewById(R.id.categoriaImage);
-        image.setImageResource(categorias.get(position).getImage());
+        ImageView image = convertView.findViewById(R.id.servicioImage);
+        image.setImageResource(servicios.get(position).getImage());
 
 
         return convertView;

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
 import com.example.netjob.Model.Servicio;
 import com.example.netjob.databinding.ActivityListaServiciosBinding;
 
@@ -31,6 +32,13 @@ public class ListaServicios extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         List<Servicio> servicios = new ArrayList<>();
+
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
 
         ServicioAdapter gridAdapter = new ServicioAdapter(ListaServicios.this, R.layout.servicio, servicios);
         binding.servicioOfrecido.setAdapter(gridAdapter);

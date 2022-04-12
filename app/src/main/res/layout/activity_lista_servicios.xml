@@ -32,11 +32,11 @@
             android:textAlignment="center"
             android:textSize="18dp" />
 
-            <GridView
-                android:id="@+id/servicioOfrecido"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:numColumns="0" />
+        <GridView
+            android:id="@+id/servicioOfrecido"
+            android:layout_width="match_parent"
+            android:layout_height="532dp"
+            android:numColumns="0" />
     </LinearLayout>
 
     <LinearLayout

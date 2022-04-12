@@ -34,12 +34,12 @@ public class MisServicios extends AppCompatActivity {
 
         List<Servicio> servicios = new ArrayList<>();
 
-        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
-        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
-        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
-        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
-        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
-        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Albañil","Prueba 3", R.drawable.albaniles));
+        servicios.add(new Servicio("Fontanero","Prueba 3", R.drawable.albaniles));
+        servicios.add(new Servicio("Mecanico","Prueba 3", R.drawable.albaniles));
+        servicios.add(new Servicio("Plumero","Prueba 3", R.drawable.albaniles));
+        servicios.add(new Servicio("Cocinero","Prueba 3", R.drawable.albaniles));
+        servicios.add(new Servicio("Profesor","Prueba 3", R.drawable.albaniles));
 
         ServicioAdapter gridAdapter = new ServicioAdapter(MisServicios.this, R.layout.servicio, servicios);
         binding.servicioContratado.setAdapter(gridAdapter);

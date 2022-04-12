@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void goToInvitado(){
-        Intent intent = new Intent(MainActivity.this, ListaServicios.class);
+        Intent intent = new Intent(MainActivity.this, MisServicios.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

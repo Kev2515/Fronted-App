@@ -1,13 +1,24 @@
 package com.example.netjob;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.example.netjob.Model.Servicio;
+import com.example.netjob.databinding.ActivityMisServiciosBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MisServicios extends AppCompatActivity {
+
+    @NonNull ActivityMisServiciosBinding binding;
 
     private ImageButton Inicio;
     private ImageButton Buzon;
@@ -18,7 +29,27 @@ public class MisServicios extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mis_servicios);
+        binding = ActivityMisServiciosBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        List<Servicio> servicios = new ArrayList<>();
+
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+        servicios.add(new Servicio("Kevin","Hermoso", R.drawable.albaniles));
+
+        ServicioAdapter gridAdapter = new ServicioAdapter(MisServicios.this, R.layout.servicio, servicios);
+        binding.servicioContratado.setAdapter(gridAdapter);
+
+        binding.servicioContratado.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                bindUi();
+
+                Toast.makeText(MisServicios.this, "Accediendo a servicio de " + servicios.get(position).getLinea1(), Toast.LENGTH_SHORT).show();
         bindUi();
 
         Inicio.setOnClickListener(new View.OnClickListener() {
@@ -85,5 +116,7 @@ public class MisServicios extends AppCompatActivity {
         Intent intent = new Intent(MisServicios.this, PerfilPropio.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+    }
+        });
     }
 }

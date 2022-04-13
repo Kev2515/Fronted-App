@@ -5,9 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.example.netjob.Model.Contrato;
+import com.example.netjob.databinding.ActivityHistorialContratosBinding;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class HistorialContratos extends AppCompatActivity {
+
+    ActivityHistorialContratosBinding binding;
 
     private ImageButton Inicio;
     private ImageButton Buzon;
@@ -19,40 +30,60 @@ public class HistorialContratos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial_contratos);
-        bindUi();
+        binding = ActivityHistorialContratosBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        Inicio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToInicio();
-            }
-        });
-        Buzon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToBuzon();
-            }
-        });
-        Buscar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToBuscar();
-            }
-        });
-        Favoritos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToFavoritos();
-            }
-        });
-        Perfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToPerfil();
-            }
-        });
+        List<Contrato> contratos = new ArrayList<>();
 
-    }
+        contratos.add(new Contrato("Albañil","Prueba 3", R.drawable.albaniles));
+        contratos.add(new Contrato("Fontanero","Prueba 3", R.drawable.albaniles));
+        contratos.add(new Contrato("Mecanico","Prueba 3", R.drawable.albaniles));
+        contratos.add(new Contrato("Plumero","Prueba 3", R.drawable.albaniles));
+        contratos.add(new Contrato("Cocinero","Prueba 3", R.drawable.albaniles));
+        contratos.add(new Contrato("Profesor","Prueba 3", R.drawable.albaniles));
+
+        ContratoAdapter gridAdapter = new ContratoAdapter(HistorialContratos.this, R.layout.contrato, contratos);
+        binding.estadoContrato.setAdapter(gridAdapter);
+        binding.estadoContrato.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                bindUi();
+
+                Toast.makeText(HistorialContratos.this, "Accediendo a estado de " + contratos.get(position).getLinea1(), Toast.LENGTH_SHORT).show();
+
+
+                Inicio.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        goToInicio();
+                    }
+                });
+                Buzon.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        goToBuzon();
+                    }
+                });
+                Buscar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        goToBuscar();
+                    }
+                });
+                Favoritos.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        goToFavoritos();
+                    }
+                });
+                Perfil.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        goToPerfil();
+                    }
+                });
+
+            }
     private void bindUi() {
 
         Inicio = findViewById(R.id.imageButton);
@@ -85,5 +116,7 @@ public class HistorialContratos extends AppCompatActivity {
         Intent intent = new Intent(HistorialContratos.this, PerfilPropio.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+    }
+        });
     }
 }

@@ -16,6 +16,9 @@
             android:name=".MisServicios"
             android:exported="false" />
         <activity
+            android:name=".HistorialContratos"
+            android:exported="false" />
+        <activity
             android:name=".ListaServicios"
             android:exported="false" />
         <activity

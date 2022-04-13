@@ -6,37 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".HistorialContratos">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="224dp"
-        android:layout_height="57dp"
-        android:text="NetJob"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="131dp" />
-
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="213dp"
-        android:layout_height="33dp"
-        android:text="Historial de Contratos "
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="209dp" />
-
-    <ListView
+    <LinearLayout
+        android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="600dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-    </ListView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="NetJob"
+            android:textAlignment="center"
+            android:textSize="48dp"
+            tools:ignore="MissingConstraints"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Historial de Contratos"
+            android:textAlignment="viewStart"
+            android:textSize="18dp"
+            tools:ignore="MissingConstraints"/>
+
+        <GridView
+            android:id="@+id/estadoContrato"
+            android:layout_width="match_parent"
+            android:layout_height="532dp"
+            android:numColumns="0"
+            tools:ignore="MissingConstraints"/>
+    </LinearLayout>
 
 
     <LinearLayout
@@ -92,10 +96,6 @@
             android:src="@drawable/perfil"></ImageButton>
 
     </LinearLayout>
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class MisServicios extends AppCompatActivity {
     private ImageButton Buscar;
     private ImageButton Favoritos;
     private ImageButton Perfil;
+    public Button NuevoServicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +85,11 @@ public class MisServicios extends AppCompatActivity {
             }
         });
 
+        NuevoServicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { goToNuevoServicio(); }
+        });
+
     }
     private void bindUi() {
 
@@ -91,6 +98,7 @@ public class MisServicios extends AppCompatActivity {
         Buscar = findViewById(R.id.imageButton2);
         Favoritos = findViewById(R.id.imageButton3);
         Perfil = findViewById(R.id.imageButton4);
+        NuevoServicio = findViewById(R.id.nuevoServicio);
     }
     private void goToInicio(){
         Intent intent = new Intent(MisServicios.this, Home.class);
@@ -117,6 +125,11 @@ public class MisServicios extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
+    private void goToNuevoServicio(){
+                Intent intent = new Intent(MisServicios.this, ListaServicios.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
         });
     }
 }

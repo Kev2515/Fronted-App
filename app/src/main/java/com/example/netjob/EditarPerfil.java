@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -21,8 +22,8 @@ public class EditarPerfil extends AppCompatActivity {
     private ImageButton Buscar;
     private ImageButton Favoritos;
     private ImageButton Perfil;
-
-
+    public Button NuevoServicio;
+    public Button MisServicios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,15 @@ public class EditarPerfil extends AppCompatActivity {
                 goToPerfil();
             }
         });
+        NuevoServicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { goToNuevoServicio(); }
+        });
+        MisServicios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { goToMisServicios(); }
+        });
+
 
     }
     private void bindUi() {
@@ -76,6 +86,8 @@ public class EditarPerfil extends AppCompatActivity {
         Buscar = findViewById(R.id.imageButton2);
         Favoritos = findViewById(R.id.imageButton3);
         Perfil = findViewById(R.id.imageButton4);
+        NuevoServicio = findViewById(R.id.button);
+        MisServicios = findViewById(R.id.button3);
     }
         private void goToInicio(){
             Intent intent = new Intent(EditarPerfil.this, Home.class);
@@ -102,5 +114,16 @@ public class EditarPerfil extends AppCompatActivity {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
+        private void goToNuevoServicio(){
+            Intent intent = new Intent(EditarPerfil.this, ListaServicios.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
+        private void goToMisServicios(){
+            Intent intent = new Intent(EditarPerfil.this, MisServicios.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
+
     }
 

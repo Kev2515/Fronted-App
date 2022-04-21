@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void goToInvitado(){
-        Intent intent = new Intent(MainActivity.this, HistorialContratos.class);
+        Intent intent = new Intent(MainActivity.this, Login.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

@@ -41,6 +41,7 @@
                 android:layout_marginStart="106dp"
                 android:layout_marginEnd="106dp"
                 android:layout_marginTop="5dp"
+                android:id="@+id/nuevoServicio"
                 android:background="@drawable/edit_text_background"
                 android:text="Nuevo servicio" />
         </LinearLayout>

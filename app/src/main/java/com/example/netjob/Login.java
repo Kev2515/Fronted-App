@@ -2,12 +2,10 @@ package com.example.netjob;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Patterns;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,11 +13,19 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.netjob.Model.LoginResponse;
+import com.example.netjob.Model.User;
+import com.example.netjob.Utils.Apis;
+import com.example.netjob.Utils.LoginService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Login extends AppCompatActivity {
 
-    private SharedPreferences prefs;
+    LoginService loginService;
 
-    private Button btnLogin;
     private EditText textEmail;
     private EditText textPassword;
     private TextView textView4;
@@ -30,75 +36,60 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        prefs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
-        bindUi();
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        textEmail = findViewById(R.id.editText);
+        textPassword = findViewById(R.id.editText2);
+
+    }
+
+    public void Login(View view){
+
+        User user = new User();
+
+        if (!textEmail.getText().toString().isEmpty()){
+            user.setUsername(textEmail.getText().toString());
+        }else{
+            textEmail.setText("");
+        }
+
+        if (!textPassword.getText().toString().isEmpty()){
+            user.setPassword(textPassword.getText().toString());
+        }else{
+            textPassword.setText("");
+        }
+
+        loginService = Apis.getLoginService();
+        Call<LoginResponse> call=loginService.postLogin(user);
+        call.enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onClick(View view) {
-                String email = textEmail.getText().toString();
-                String password = textPassword.getText().toString();
-               if (login(email, password)) {
-                   goToMain();
-                   saveOnPreferences(email,password);
-               }
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+
+
+                if (response.code() == 200){
+                    Log.d("Respuesta" , response.body().getToken());
+                    Log.d("Respuesta" , String.valueOf(response));
+
+                    Intent intent = new Intent(Login.this, Home.class);
+                    intent.putExtra("token" , response.body().getToken());
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Toast.makeText(getApplicationContext(),"Usuario no encontrado", Toast.LENGTH_LONG ).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+
+                Log.d("Respuesta" , t.getMessage());
             }
         });
-        textView4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToRecuperar();
-            }
-        });
-    }
-
-
-    private void bindUi() {
-        textEmail = (EditText) findViewById(R.id.editText);
-        textPassword = (EditText) findViewById(R.id.editText2);
-        btnLogin = (Button) findViewById(R.id.button);
-        textView4 = (TextView) findViewById(R.id.textView3);
-        switch1 = (Switch) findViewById(R.id.switch1);
 
     }
 
-    private boolean login (String email, String password){
-        if (!isValidaEmail(email)){
-            Toast.makeText(this,"Email is not valid, please try again", Toast.LENGTH_LONG).show();
-            return false;
-        } else if (!isValidaPassword(password)){
-            Toast.makeText(this,"Password is not valid, 4 characteres or more, please try again", Toast.LENGTH_LONG).show();
 
-            return false;
-        } else {
-            return  true;
-        }
-    }
-
-    private void saveOnPreferences(String email, String password){
-        if(switch1.isChecked()){
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putString("email", email);
-            editor.putString("password", password);
-            editor.apply();
-        }
-    }
-
-    private boolean isValidaEmail(String email){
-        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
-    }
-    private boolean isValidaPassword(String password){
-        return password.length() > 4;
-    }
-
-    private void goToMain(){
-        Intent intent = new Intent(Login.this, Home.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
-    private void goToRecuperar(){
+    public void RecuperarContraseña(View view) {
         Intent intent = new Intent(Login.this, RecuperarC.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+        finish();
     }
-
 }

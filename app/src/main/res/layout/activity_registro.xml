@@ -104,6 +104,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="200dp"
         android:background="@drawable/button_rounded"
+        android:onClick="Registrar"
         android:text="Registrarme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

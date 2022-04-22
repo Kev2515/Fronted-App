@@ -26,10 +26,10 @@ public class Login extends AppCompatActivity {
 
     LoginService loginService;
 
-    private EditText textEmail;
-    private EditText textPassword;
-    private TextView textView4;
-    private Switch switch1;
+     EditText textEmail;
+     EditText textPassword;
+     TextView textView4;
+     Switch switch1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

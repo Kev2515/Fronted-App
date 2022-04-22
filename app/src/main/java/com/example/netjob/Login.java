@@ -65,9 +65,6 @@ public class Login extends AppCompatActivity {
 
 
                 if (response.code() == 200){
-                    Log.d("Respuesta" , response.body().getToken());
-                    Log.d("Respuesta" , String.valueOf(response));
-
                     Intent intent = new Intent(Login.this, Home.class);
                     intent.putExtra("token" , response.body().getToken());
                     startActivity(intent);

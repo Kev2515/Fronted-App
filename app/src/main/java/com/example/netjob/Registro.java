@@ -11,8 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.netjob.Utils.RegistroService;
+
 public class Registro extends AppCompatActivity {
 
+    RegistroService registroService;
     private Button btnRegistro;
     private EditText textEmail;
     private EditText textPassword;

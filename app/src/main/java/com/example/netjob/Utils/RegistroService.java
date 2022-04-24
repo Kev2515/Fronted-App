@@ -8,6 +8,6 @@ import retrofit2.http.POST;
 
 public interface RegistroService {
 
-    @POST("api/register")
+    @POST("register")
     Call<User> postRegister(@Body User user);
 }

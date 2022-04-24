@@ -26,8 +26,8 @@ public class Login extends AppCompatActivity {
 
     LoginService loginService;
 
-     EditText textEmail;
-     EditText textPassword;
+     EditText username;
+     EditText password;
      TextView textView4;
      Switch switch1;
 
@@ -36,8 +36,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        textEmail = findViewById(R.id.editText);
-        textPassword = findViewById(R.id.editText2);
+        username = findViewById(R.id.editText);
+        password = findViewById(R.id.editText2);
 
     }
 
@@ -45,16 +45,16 @@ public class Login extends AppCompatActivity {
 
         User user = new User();
 
-        if (!textEmail.getText().toString().isEmpty()){
-            user.setUsername(textEmail.getText().toString());
+        if (!username.getText().toString().isEmpty()){
+            user.setUsername(username.getText().toString());
         }else{
-            textEmail.setText("");
+            username.setText("");
         }
 
-        if (!textPassword.getText().toString().isEmpty()){
-            user.setPassword(textPassword.getText().toString());
+        if (!password.getText().toString().isEmpty()){
+            user.setPassword(password.getText().toString());
         }else{
-            textPassword.setText("");
+            password.setText("");
         }
 
         loginService = Apis.getLoginService();

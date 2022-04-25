@@ -43,7 +43,7 @@ public class Registro extends AppCompatActivity {
         if (!username.getText().toString().isEmpty() && !password.getText().toString().isEmpty() && !repitPassword.getText().toString().isEmpty() &&  password.getText().toString().equals(repitPassword.getText().toString())){
 
             user.setPassword(password.getText().toString());
-            user.setUsername(username.getText().toString());
+            user.setLogin(username.getText().toString());
 
 
             registroService = Apis.getRegisterService();
@@ -53,7 +53,7 @@ public class Registro extends AppCompatActivity {
                 public void onResponse(Call<User> call, Response<User> response) {
 
 
-                    if (response.code() == 200){
+                    if (response.code() == 201){
                         Log.d("Respuesta Registro" , String.valueOf(response));
 
                         Intent login = new Intent(Registro.this, Login.class);

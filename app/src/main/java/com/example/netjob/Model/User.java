@@ -2,16 +2,16 @@ package com.example.netjob.Model;
 
 public class User {
 
-    String username;
+    String login;
     String password;
     String mail;
 
-    public String getUsername() {
-        return username;
+    public String getLogin() {
+        return login;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {
@@ -25,6 +25,6 @@ public class User {
         return mail;
     }
 
-    public void setEmail (String email) { this.mail = email;
+    public void setMail (String email) { this.mail = email;
     }
 }

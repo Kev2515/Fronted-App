@@ -37,7 +37,7 @@ public class RecuperarC extends AppCompatActivity {
         if (!mail.getText().toString().isEmpty()) {
 
 
-            user.setEmail(mail.getText().toString());
+            user.setMail(mail.getText().toString());
 
             recuperarService = Apis.getRecuperarService();
             Call<User> call = recuperarService.postRecuperar(user);

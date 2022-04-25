@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.netjob.Model.LoginResponse;
 import com.example.netjob.Model.User;
+import com.example.netjob.Model.UserLogin;
 import com.example.netjob.Utils.Apis;
 import com.example.netjob.Utils.LoginService;
 
@@ -43,7 +44,7 @@ public class Login extends AppCompatActivity {
 
     public void Login(View view){
 
-        User user = new User();
+        UserLogin user = new UserLogin();
 
         if (!username.getText().toString().isEmpty()){
             user.setUsername(username.getText().toString());

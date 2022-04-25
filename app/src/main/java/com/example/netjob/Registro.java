@@ -1,5 +1,7 @@
 package com.example.netjob;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,14 +9,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.netjob.Model.User;
 import com.example.netjob.Utils.Apis;
 import com.example.netjob.Utils.RegistroService;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -44,12 +42,9 @@ public class Registro extends AppCompatActivity {
 
         if (!username.getText().toString().isEmpty() && !password.getText().toString().isEmpty() && !repitPassword.getText().toString().isEmpty() &&  password.getText().toString().equals(repitPassword.getText().toString())){
 
-            user.setUsername(username.getText().toString());
             user.setPassword(password.getText().toString());
+            user.setUsername(username.getText().toString());
 
-            OkHttpClient.Builder okhttpClientBuilder = new OkHttpClient.Builder();
-            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-            okhttpClientBuilder.addInterceptor(logging);
 
             registroService = Apis.getRegisterService();
             Call<User> call=registroService.postRegister(user);
@@ -58,11 +53,11 @@ public class Registro extends AppCompatActivity {
                 public void onResponse(Call<User> call, Response<User> response) {
 
 
-                    if (response.code() == 201){
+                    if (response.code() == 200){
                         Log.d("Respuesta Registro" , String.valueOf(response));
 
-                        Intent intent = new Intent(Registro.this, Login.class);
-                        startActivity(intent);
+                        Intent login = new Intent(Registro.this, Login.class);
+                        startActivity(login);
                         finish();
 
                     }else{

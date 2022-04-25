@@ -4,61 +4,72 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Patterns;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.netjob.Model.User;
+import com.example.netjob.Utils.Apis;
+import com.example.netjob.Utils.RecuperarService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class RecuperarC extends AppCompatActivity {
 
-    private Button btnEnviar;
-    private EditText textEmail;
+    RecuperarService recuperarService;
+    EditText mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recuperar_c);
 
-        bindUi();
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = textEmail.getText().toString();
+        mail = findViewById(R.id.editText);
 
-                if (recuperar(email)) {
-                    goToMain();
+    }
+    public void RecContraseña (View view) {
+
+        User user = new User();
+
+        if (!mail.getText().toString().isEmpty()) {
+
+
+            user.setEmail(mail.getText().toString());
+
+            recuperarService = Apis.getRecuperarService();
+            Call<User> call = recuperarService.postRecuperar(user);
+            call.enqueue(new Callback<User>() {
+                @Override
+                public void onResponse(Call<User> call, Response<User> response) {
+
+                    if (response.code() == 200) {
+                        Intent intent = new Intent(RecuperarC.this, Login.class);
+                        startActivity(intent);
+                        finish();
+                        Log.d("Respuesta Recuperar" , String.valueOf(response));
+
+
+                    } else {
+
+                        Toast.makeText(getApplicationContext(), String.valueOf(response), Toast.LENGTH_LONG).show();
+                    }
                 }
-            }
-        });
-    }
 
-        private void bindUi() {
+                @Override
+                public void onFailure(Call<User> call, Throwable t) {
 
-            btnEnviar = (Button) findViewById(R.id.button);
-            textEmail = (EditText) findViewById(R.id.editText);
-        }
 
-    private boolean recuperar(String email){
-        if (!isValidaEmail(email)){
-            Toast.makeText(this,"Email is not valid, please try again", Toast.LENGTH_LONG).show();
-            return false;
+                    Log.d("Error Recuperacion", t.getMessage());
 
+                }
+            });
         } else {
-            return  true;
+            Toast.makeText(getApplicationContext(), " Datos erroneos", Toast.LENGTH_LONG).show();
+            Log.d("RespuestaError Registro", "error");
+
         }
     }
-
-    private boolean isValidaEmail(String email){
-        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
-    }
-
-    private void goToMain(){
-        Intent intent = new Intent(RecuperarC.this, Login.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
-
 }

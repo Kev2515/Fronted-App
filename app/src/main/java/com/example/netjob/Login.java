@@ -26,18 +26,18 @@ public class Login extends AppCompatActivity {
 
     LoginService loginService;
 
-    private EditText textEmail;
-    private EditText textPassword;
-    private TextView textView4;
-    private Switch switch1;
+     EditText username;
+     EditText password;
+     TextView textView4;
+     Switch switch1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        textEmail = findViewById(R.id.editText);
-        textPassword = findViewById(R.id.editText2);
+        username = findViewById(R.id.editText);
+        password = findViewById(R.id.editText2);
 
     }
 
@@ -45,16 +45,16 @@ public class Login extends AppCompatActivity {
 
         User user = new User();
 
-        if (!textEmail.getText().toString().isEmpty()){
-            user.setUsername(textEmail.getText().toString());
+        if (!username.getText().toString().isEmpty()){
+            user.setUsername(username.getText().toString());
         }else{
-            textEmail.setText("");
+            username.setText("");
         }
 
-        if (!textPassword.getText().toString().isEmpty()){
-            user.setPassword(textPassword.getText().toString());
+        if (!password.getText().toString().isEmpty()){
+            user.setPassword(password.getText().toString());
         }else{
-            textPassword.setText("");
+            password.setText("");
         }
 
         loginService = Apis.getLoginService();
@@ -65,9 +65,6 @@ public class Login extends AppCompatActivity {
 
 
                 if (response.code() == 200){
-                    Log.d("Respuesta" , response.body().getToken());
-                    Log.d("Respuesta" , String.valueOf(response));
-
                     Intent intent = new Intent(Login.this, Home.class);
                     intent.putExtra("token" , response.body().getToken());
                     startActivity(intent);

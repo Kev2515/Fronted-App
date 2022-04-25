@@ -6,8 +6,8 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 
-public interface RegistroService {
+public interface RecuperarService {
 
-    @POST("register")
-    Call<User> postRegister(@Body User user);
+    @POST("account/reset-password/init")
+    Call<User> postRecuperar(@Body User user);
 }

@@ -4,18 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.netjob.Model.Servicio;
+import com.example.netjob.Model.Servicios;
+import com.example.netjob.Utils.Apis;
+import com.example.netjob.Utils.ServicioService;
 import com.example.netjob.databinding.ActivityListaServiciosBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaServicios extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class ListaServicios extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ActivityListaServiciosBinding binding;
 
@@ -25,103 +33,91 @@ public class ListaServicios extends AppCompatActivity {
     private ImageButton Favoritos;
     private ImageButton Perfil;
 
+    GridView listaServicios;
+    List<Servicios> servicios = new ArrayList<>();
+    ServicioAdapter servicioAdapter;
+    ServicioService servicioService;
+    String category;
+    String parametro;
+    String token;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityListaServiciosBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_lista_servicios);
 
-        List<Servicio> servicios = new ArrayList<>();
+        Inicio = findViewById(R.id.imageButton);
+        Buzon = findViewById(R.id.imageButton1);
+        Buscar = findViewById(R.id.imageButton2);
+        Favoritos = findViewById(R.id.imageButton3);
+        Perfil = findViewById(R.id.imageButton4);
 
-        servicios.add(new Servicio("Albañil","Prueba 1", R.drawable.albaniles));
-        servicios.add(new Servicio("Fontanero","Prueba 1", R.drawable.albaniles));
-        servicios.add(new Servicio("Mecanico","Prueba 1", R.drawable.albaniles));
-        servicios.add(new Servicio("Plumero","Prueba 1", R.drawable.albaniles));
-        servicios.add(new Servicio("Cocinero","Prueba 1", R.drawable.albaniles));
-        servicios.add(new Servicio("Profesor","Prueba 1", R.drawable.albaniles));
+        servicioService = Apis.getServicioService();
 
-        ServicioAdapter gridAdapter = new ServicioAdapter(ListaServicios.this, R.layout.servicio, servicios);
-        binding.servicioOfrecido.setAdapter(gridAdapter);
+        listaServicios = findViewById(R.id.servicioOfrecido);
+        listaServicios.setOnItemClickListener(this);
 
-        binding.servicioOfrecido.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        token = getIntent().getStringExtra("token");
+        category = getIntent().getStringExtra("id");
+        parametro = getIntent().getStringExtra("parametro");
+
+        if (category == null) {
+            ListarServicioPorParametro();
+        } else {
+            ListarCategoriaPorCategoria();
+        }
+    }
+    public void ListarCategoriaPorCategoria(){
+        Call<List<Servicios>> call=servicioService.getServiciosPorCategoria(category, "Bearer "+ token, "application/json" );
+        call.enqueue(new Callback<List<Servicios>>() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                bindUi();
-
-                Toast.makeText(ListaServicios.this, "Accediendo a servicio de " + servicios.get(position).getLinea1(), Toast.LENGTH_SHORT).show();
-
-                Inicio.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goToInicio();
-                    }
-                });
-                Buzon.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goToBuzon();
-                    }
-                });
-                Buscar.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goToBuscar();
-                    }
-                });
-                Favoritos.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goToFavoritos();
-                    }
-                });
-                Perfil.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goToPerfil();
-                    }
-                });
-
+            public void onResponse(Call<List<Servicios>> call, Response<List<Servicios>> response) {
+                servicios = response.body();
+                servicioAdapter = new ServicioAdapter(ListaServicios.this, R.layout.activity_lista_servicios, servicios);
+                listaServicios.setAdapter(servicioAdapter);
+                Log.d("Servicios por categoria", response.body().toString());
+                Log.d("status", response.toString());
             }
 
-            private void bindUi() {
-
-                Inicio = findViewById(R.id.imageButton);
-                Buzon = findViewById(R.id.imageButton1);
-                Buscar = findViewById(R.id.imageButton2);
-                Favoritos = findViewById(R.id.imageButton3);
-                Perfil = findViewById(R.id.imageButton4);
-            }
-
-            private void goToInicio() {
-                Intent intent = new Intent(ListaServicios.this, Home.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-
-            private void goToBuzon() {
-                Intent intent = new Intent(ListaServicios.this, Buzon.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-
-            private void goToBuscar() {
-                Intent intent = new Intent(ListaServicios.this, ListaServicios.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-
-            private void goToFavoritos() {
-                Intent intent = new Intent(ListaServicios.this, Favoritos.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-
-            private void goToPerfil() {
-                Intent intent = new Intent(ListaServicios.this, PerfilPropio.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
+            @Override
+            public void onFailure(Call<List<Servicios>> call, Throwable t) {
+                Log.d("response", t.getMessage());
             }
         });
+
+    }
+
+    public void ListarServicioPorParametro(){
+        Call<List<Servicios>> call=servicioService.getServiciosPorParametro(parametro, "Bearer "+ token, "application/json");
+        call.enqueue(new Callback<List<Servicios>>() {
+            @Override
+            public void onResponse(Call<List<Servicios>> call, Response<List<Servicios>> response) {
+                servicios = response.body();
+                servicioAdapter = new ServicioAdapter(ListaServicios.this, R.layout.activity_lista_servicios, servicios);
+                listaServicios.setAdapter(servicioAdapter);
+                Log.d("parametro", parametro);
+                Log.d("response", response.body().toString());
+                Log.d("status", response.toString());
+            }
+
+            @Override
+            public void onFailure(Call<List<Servicios>> call, Throwable t) {
+                Log.d("response", t.getMessage());
+            }
+        });
+
+    }
+
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+        Log.d("position", String.valueOf(position));
+        Intent intent = new Intent(ListaServicios.this, DetalleServicio.class);
+        intent.putExtra("id", servicios.get(position).getId());
+        intent.putExtra("token" , token);
+
+        startActivity(intent);
+        finish();
     }
 }
 

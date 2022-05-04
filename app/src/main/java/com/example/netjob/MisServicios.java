@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.netjob.Model.Servicio;
+import com.example.netjob.Model.Servicios;
 import com.example.netjob.databinding.ActivityMisServiciosBinding;
 
 import java.util.ArrayList;
@@ -34,14 +34,9 @@ public class MisServicios extends AppCompatActivity {
         binding = ActivityMisServiciosBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        List<Servicio> servicios = new ArrayList<>();
+        List<Servicios> servicios = new ArrayList<>();
 
-        servicios.add(new Servicio("Albañil","Prueba 3", R.drawable.albaniles));
-        servicios.add(new Servicio("Fontanero","Prueba 3", R.drawable.albaniles));
-        servicios.add(new Servicio("Mecanico","Prueba 3", R.drawable.albaniles));
-        servicios.add(new Servicio("Plumero","Prueba 3", R.drawable.albaniles));
-        servicios.add(new Servicio("Cocinero","Prueba 3", R.drawable.albaniles));
-        servicios.add(new Servicio("Profesor","Prueba 3", R.drawable.albaniles));
+
 
         ServicioAdapter gridAdapter = new ServicioAdapter(MisServicios.this, R.layout.servicio, servicios);
         binding.servicioContratado.setAdapter(gridAdapter);
@@ -51,7 +46,6 @@ public class MisServicios extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 bindUi();
 
-                Toast.makeText(MisServicios.this, "Accediendo a servicio de " + servicios.get(position).getLinea1(), Toast.LENGTH_SHORT).show();
         bindUi();
 
         Inicio.setOnClickListener(new View.OnClickListener() {

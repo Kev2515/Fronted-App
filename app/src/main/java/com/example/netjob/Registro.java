@@ -56,9 +56,7 @@ public class Registro extends AppCompatActivity {
                     if (response.code() == 201){
                         Log.d("Respuesta Registro" , String.valueOf(response));
 
-                        Intent login = new Intent(Registro.this, Login.class);
-                        startActivity(login);
-                        finish();
+
 
                     }else{
                         Toast.makeText(getApplicationContext(),String.valueOf(response), Toast.LENGTH_LONG ).show();
@@ -67,13 +65,16 @@ public class Registro extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
+                    Intent login = new Intent(Registro.this, Login.class);
+                    startActivity(login);
+                    finish();
 
                     Log.d("RespuestaError Registro" , t.getMessage());
                 }
             });
         }else{
             Toast.makeText(getApplicationContext()," Datos erroneos", Toast.LENGTH_LONG ).show();
-            Log.d("RespuestaError Registro" , "error");
+            Log.d("Respuesta ErrorRegistro" , "error");
 
         }
 

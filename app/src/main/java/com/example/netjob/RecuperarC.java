@@ -46,9 +46,7 @@ public class RecuperarC extends AppCompatActivity {
                 public void onResponse(Call<User> call, Response<User> response) {
 
                     if (response.code() == 200) {
-                        Intent intent = new Intent(RecuperarC.this, Login.class);
-                        startActivity(intent);
-                        finish();
+
                         Log.d("Respuesta Recuperar" , String.valueOf(response));
 
 
@@ -60,6 +58,9 @@ public class RecuperarC extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
+                    Intent intent = new Intent(RecuperarC.this, Login.class);
+                    startActivity(intent);
+                    finish();
 
 
                     Log.d("Error Recuperacion", t.getMessage());

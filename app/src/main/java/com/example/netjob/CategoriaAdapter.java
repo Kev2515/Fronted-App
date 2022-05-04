@@ -1,6 +1,9 @@
 package com.example.netjob;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +13,12 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 
 import com.example.netjob.Model.Categoria;
 
+import java.util.Base64;
 import java.util.List;
 
 public class CategoriaAdapter extends ArrayAdapter {
@@ -29,6 +34,7 @@ public class CategoriaAdapter extends ArrayAdapter {
         categorias = objects;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -43,7 +49,9 @@ public class CategoriaAdapter extends ArrayAdapter {
 
 
         ImageView image = convertView.findViewById(R.id.categoriaImage);
-        image.setImageResource(categorias.get(position).getImage());
+        byte [] bytes = Base64.getDecoder().decode(categorias.get(position).getImage());
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        image.setImageBitmap(decodedByte);
 
 
         return convertView;

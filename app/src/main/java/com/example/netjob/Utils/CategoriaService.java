@@ -10,7 +10,7 @@ import retrofit2.http.Header;
 public interface CategoriaService {
 
 
-    @GET("servicios/categoria?id=2")
+    @GET("categorias")
     Call<List<Categoria>> getCategorias(@Header("Authorization") String auth, @Header("Content-Type") String contentType);
 
 }

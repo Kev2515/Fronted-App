@@ -2,28 +2,28 @@ package com.example.netjob.Model;
 
 public class Categoria {
 
-    String name;
-    int image;
+    String nombre;
+    String imagen;
 
     public String getName() {
-        return name;
+        return nombre;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nombre = name;
     }
 
-    public int getImage() {
-        return image;
+    public String getImage() {
+        return imagen;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setImage(String image) {
+        this.imagen = image;
     }
 
-    public Categoria(String name, int image) {
-        this.name = name;
-        this.image = image;
+    public Categoria(String name, String image) {
+        this.nombre = name;
+        this.imagen = image;
     }
 }
 

@@ -4,7 +4,7 @@ public class User {
 
     String login;
     String password;
-    String mail;
+    String email;
 
     public String getLogin() {
         return login;
@@ -22,9 +22,9 @@ public class User {
     }
 
     public String getMail() {
-        return mail;
+        return email;
     }
 
-    public void setMail (String email) { this.mail = email;
+    public void setMail (String email) { this.email = email;
     }
 }

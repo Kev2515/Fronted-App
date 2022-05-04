@@ -17,10 +17,13 @@ public class PerfilPropio extends AppCompatActivity {
     private ImageButton Perfil;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_propio);
+
+
         bindUi();
 
         Inicio.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +57,16 @@ public class PerfilPropio extends AppCompatActivity {
             }
         });
 
+    }
+    public void Historial(View view) {
+        Intent intent = new Intent(PerfilPropio.this, HistorialContratos.class);
+        startActivity(intent);
+        finish();
+    }
+    public void Standard(View view) {
+        Intent intent = new Intent(PerfilPropio.this, PerfilVisitado.class);
+        startActivity(intent);
+        finish();
     }
     private void bindUi() {
 

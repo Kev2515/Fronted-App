@@ -4,18 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.netjob.Model.Categoria;
+import com.example.netjob.Utils.Apis;
+import com.example.netjob.Utils.CategoriaService;
 import com.example.netjob.databinding.ActivityHomeBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class Home extends AppCompatActivity implements CategoriaService, AdapterView.OnItemClickListener {
 
     ActivityHomeBinding binding;
 
@@ -25,20 +34,28 @@ public class Home extends AppCompatActivity {
     private ImageButton Favoritos;
     private ImageButton Perfil;
 
+    GridView listaCategorias;
+    List<Categoria> categorias = new ArrayList<>();
+    CategoriaAdapter categoriaAdapter;
+    CategoriaService categoriaService;
+    EditText buscador;
+    String token;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        List<Categoria> categorias = new ArrayList<>();
+        categoriaService = Apis.getCategoriaService();
+        token = getIntent().getStringExtra("token");
 
-        categorias.add(new Categoria("Albañiles", R.drawable.albaniles));
-        categorias.add(new Categoria("Cuidadores", R.drawable.ancianos));
-        categorias.add(new Categoria("Electricistas", R.drawable.electricistas));
-        categorias.add(new Categoria("Fontaneros", R.drawable.fontaneros));
-        categorias.add(new Categoria("Jardineros", R.drawable.jardineros));
-        categorias.add(new Categoria("Profesores", R.drawable.profesor_particular));
+        buscador = findViewById(R.id.buscador);
+        listaCategorias= findViewById(R.id.gridView);
+
+        listaCategorias.setOnItemClickListener(this);
+
+        ListarCategorias();
 
         CategoriaAdapter gridAdapter = new CategoriaAdapter(Home.this, R.layout.categoria, categorias);
         binding.gridView.setAdapter(gridAdapter);
@@ -50,6 +67,9 @@ public class Home extends AppCompatActivity {
                 bindUi();
 
                 Toast.makeText(Home.this, "Buscando " + categorias.get(position).getName(), Toast.LENGTH_SHORT).show();
+
+
+
 
 
                 Inicio.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +145,50 @@ public class Home extends AppCompatActivity {
 
 
         });
+    }
+    public void BuscarRecetas(View view) {
+        if (!buscador.getText().toString().isEmpty()) {
+            Intent intent = new Intent(Home.this, ListaServicios.class);
+            intent.putExtra("parametro", buscador.getText().toString());
+            Log.d("parametro", buscador.getText().toString());
+            intent.putExtra("token" , token);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    private void ListarCategorias() {
+        Call<List<Categoria>> call=categoriaService.getCategorias("Bearer "+ token,  "application/json");
+        call.enqueue(new Callback<List<Categoria>>() {
+            @Override
+            public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
+                Log.d("status", response.toString());
+                categorias = response.body();
+                categoriaAdapter = new CategoriaAdapter(Home.this, R.layout.categoria, categorias);
+                listaCategorias.setAdapter(categoriaAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<List<Categoria>> call, Throwable t) {
+                Log.d("response", t.getMessage());
+            }
+        });
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+
+        Intent intent = new Intent(Home.this, ListaServicios.class);
+        intent.putExtra("category" , categorias.get(position).getName());
+        Log.d("category", categorias.get(position).getName());
+        intent.putExtra("token" , token);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public Call<List<Categoria>> getCategorias(String auth, String contentType) {
+        return null;
     }
 }
 

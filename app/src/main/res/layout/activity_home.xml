@@ -18,7 +18,8 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:layout_width="383dp"
+            android:id="@+id/buscador"
+            android:layout_width="315dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:layout_marginLeft="42dp"
@@ -28,6 +29,16 @@
             android:padding="15dp"
             android:textAlignment="center" />
 
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:onClick="BuscarRecetas"
+            android:src="@drawable/buscar">
+
+        </ImageButton>
 
         <TextView
             android:layout_width="match_parent"

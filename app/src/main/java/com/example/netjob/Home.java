@@ -50,7 +50,6 @@ public class Home extends AppCompatActivity implements CategoriaService, Adapter
         categoriaService = Apis.getCategoriaService();
         token = getIntent().getStringExtra("token");
 
-        buscador = findViewById(R.id.buscador);
         listaCategorias= findViewById(R.id.gridView);
 
         listaCategorias.setOnItemClickListener(this);
@@ -146,7 +145,7 @@ public class Home extends AppCompatActivity implements CategoriaService, Adapter
 
         });
     }
-    public void BuscarRecetas(View view) {
+    public void BuscarServicio(View view) {
         if (!buscador.getText().toString().isEmpty()) {
             Intent intent = new Intent(Home.this, ListaServicios.class);
             intent.putExtra("parametro", buscador.getText().toString());

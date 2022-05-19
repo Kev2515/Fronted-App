@@ -42,7 +42,7 @@ public class Inicio extends AppCompatActivity {
 
     }
     private void goToLogin(){
-        Intent intent = new Intent(Inicio.this, Login.class);
+        Intent intent = new Intent(Inicio.this, ListaServicios.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

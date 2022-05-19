@@ -11,6 +11,7 @@ import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.netjob.Model.Servicio;
 import com.example.netjob.Model.Servicios;
 import com.example.netjob.Utils.Apis;
 import com.example.netjob.Utils.ServicioService;
@@ -34,7 +35,7 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
     private ImageButton Perfil;
 
     GridView listaServicios;
-    List<Servicios> servicios = new ArrayList<>();
+    List<Servicio> servicios = new ArrayList<>();
     ServicioAdapter servicioAdapter;
     ServicioService servicioService;
     String category;
@@ -58,7 +59,7 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
         listaServicios.setOnItemClickListener(this);
 
         token = getIntent().getStringExtra("token");
-        category = getIntent().getStringExtra("id");
+        category = getIntent().getStringExtra("category");
         parametro = getIntent().getStringExtra("parametro");
 
         if (category == null) {
@@ -68,19 +69,19 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
         }
     }
     public void ListarCategoriaPorCategoria(){
-        Call<List<Servicios>> call=servicioService.getServiciosPorCategoria(category, "Bearer "+ token, "application/json" );
-        call.enqueue(new Callback<List<Servicios>>() {
+        Call<List<Servicio>> call=servicioService.getServiciosPorCategoria(category, "Bearer "+ token, "application/json" );
+        call.enqueue(new Callback<List<Servicio>>() {
             @Override
-            public void onResponse(Call<List<Servicios>> call, Response<List<Servicios>> response) {
+            public void onResponse(Call<List<Servicio>> call, Response<List<Servicio>> response) {
                 servicios = response.body();
-                servicioAdapter = new ServicioAdapter(ListaServicios.this, R.layout.activity_lista_servicios, servicios);
+                servicioAdapter = new ServicioAdapter(ListaServicios.this, R.layout.servicio, servicios);
                 listaServicios.setAdapter(servicioAdapter);
                 Log.d("Servicios por categoria", response.body().toString());
                 Log.d("status", response.toString());
             }
 
             @Override
-            public void onFailure(Call<List<Servicios>> call, Throwable t) {
+            public void onFailure(Call<List<Servicio>> call, Throwable t) {
                 Log.d("response", t.getMessage());
             }
         });
@@ -88,12 +89,12 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
     }
 
     public void ListarServicioPorParametro(){
-        Call<List<Servicios>> call=servicioService.getServiciosPorParametro(parametro, "Bearer "+ token, "application/json");
-        call.enqueue(new Callback<List<Servicios>>() {
+        Call<List<Servicio>> call=servicioService.getServiciosPorParametro(parametro, "Bearer "+ token, "application/json");
+        call.enqueue(new Callback<List<Servicio>>() {
             @Override
-            public void onResponse(Call<List<Servicios>> call, Response<List<Servicios>> response) {
+            public void onResponse(Call<List<Servicio>> call, Response<List<Servicio>> response) {
                 servicios = response.body();
-                servicioAdapter = new ServicioAdapter(ListaServicios.this, R.layout.activity_lista_servicios, servicios);
+                servicioAdapter = new ServicioAdapter(ListaServicios.this, R.layout.servicio, servicios);
                 listaServicios.setAdapter(servicioAdapter);
                 Log.d("parametro", parametro);
                 Log.d("response", response.body().toString());
@@ -101,7 +102,7 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
             }
 
             @Override
-            public void onFailure(Call<List<Servicios>> call, Throwable t) {
+            public void onFailure(Call<List<Servicio>> call, Throwable t) {
                 Log.d("response", t.getMessage());
             }
         });
@@ -113,7 +114,7 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
         Log.d("position", String.valueOf(position));
         Intent intent = new Intent(ListaServicios.this, DetalleServicio.class);
-        intent.putExtra("id", servicios.get(position).getId());
+        intent.putExtra("id", position);
         intent.putExtra("token" , token);
 
         startActivity(intent);

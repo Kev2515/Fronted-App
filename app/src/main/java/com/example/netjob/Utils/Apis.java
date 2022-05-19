@@ -2,7 +2,7 @@ package com.example.netjob.Utils;
 
 public class Apis {
 
-    public static final String URL_001 = "http://192.168.52.1:8080/api/";
+    public static final String URL_001 = "http://172.27.80.1:8080/api/";
 
     public static RegistroService getRegisterService() {
         return Cliente.getCliente(URL_001).create(RegistroService.class);
@@ -22,5 +22,9 @@ public class Apis {
 
     public static ServicioService getServicioService() {
         return Cliente.getCliente(URL_001).create(ServicioService.class);
+    }
+
+    public static DestacadoService getDestacadoService() {
+        return Cliente.getCliente(URL_001).create(DestacadoService.class);
     }
 }

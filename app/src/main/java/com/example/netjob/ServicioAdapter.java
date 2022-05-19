@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.netjob.Model.Servicio;
 import com.example.netjob.Model.Servicios;
 
 
@@ -20,9 +21,9 @@ public class ServicioAdapter extends ArrayAdapter {
 
     Context context;
     int itemLayout;
-    List<Servicios> servicios;
+    List<Servicio> servicios;
 
-    public ServicioAdapter(@NonNull Context context, int resource, @NonNull List<Servicios> objects) {
+    public ServicioAdapter(@NonNull Context context, int resource, @NonNull List<Servicio> objects) {
         super(context, resource, objects);
         this.context = context;
         itemLayout = resource;
@@ -37,15 +38,14 @@ public class ServicioAdapter extends ArrayAdapter {
             convertView = layoutInflater.inflate(itemLayout, parent, false);
         }
 
-        TextView linea1 = convertView.findViewById(R.id.linea1);
-        linea1.setText(servicios.get(position).getTitulo());
-
-        TextView linea2 = convertView.findViewById(R.id.linea2);
-        linea2.setText(servicios.get(position).getDescripcion());
+        TextView titulo = convertView.findViewById(R.id.titulo);
+        titulo.setText(servicios.get(position).getTitulo());
 
 
-        ImageView image = convertView.findViewById(R.id.servicioImage);
-        image.setImageResource(servicios.get(position).getImage());
+
+
+        //ImageView image = convertView.findViewById(R.id.servicioImage);
+        //image.setImageResource(servicios.get(position).getImagen());
 
 
         return convertView;

@@ -47,34 +47,37 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
+            android:id="@+id/descripcionServicio"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:textSize="20dp"
+            android:layout_height="310dp"
             android:textAlignment="center"
-            android:id="@+id/descripcionServicio"/>
+            android:textSize="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="232dp"
+            android:layout_height="100dp"
             android:background="@android:color/darker_gray"
             android:gravity="center"
             android:orientation="horizontal"
             tools:ignore="MissingConstraints">
 
             <Button
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:background="@drawable/edit_text_background"
-                android:text="Contacto"/>
+                android:text="Contacto"
+                android:textSize="9dp" />
 
             <Button
-                android:layout_width="150dp"
-                android:layout_height="100dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:background="@drawable/edit_text_background"
-                android:text="Solicitar"/>
+                android:text="Solicitar"
+                android:textSize="9dp" />
         </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -86,9 +89,10 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="661dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
         <ImageButton
             android:id="@+id/imageButton"

@@ -13,4 +13,6 @@ public interface CategoriaService {
     @GET("categorias")
     Call<List<Categoria>> getCategorias(@Header("Authorization") String auth, @Header("Content-Type") String contentType);
 
+
 }
+

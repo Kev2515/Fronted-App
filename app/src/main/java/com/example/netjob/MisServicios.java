@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.netjob.Model.Servicio;
 import com.example.netjob.Model.Servicios;
 import com.example.netjob.databinding.ActivityMisServiciosBinding;
 
@@ -34,7 +35,7 @@ public class MisServicios extends AppCompatActivity {
         binding = ActivityMisServiciosBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        List<Servicios> servicios = new ArrayList<>();
+        List<Servicio> servicios = new ArrayList<>();
 
 
 

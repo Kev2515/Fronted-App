@@ -28,9 +28,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:hint="Linea 1"
+                android:hint="titulo"
                 android:textSize="14dp"
-                android:id="@+id/linea1"/>
+                android:id="@+id/titulo"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

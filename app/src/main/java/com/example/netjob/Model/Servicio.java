@@ -2,40 +2,22 @@ package com.example.netjob.Model;
 
 public class Servicio {
 
-    String linea1;
-    String linea2;
-    int image;
+    String titulo;
+    String imagen;
 
-    public String getLinea1() { return linea1; }
-
-    public void setLinea1(String linea1) {
-        this.linea1 = linea1;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public String getLinea2() {
-        return linea2;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public void setLinea2(String linea2) {
-        this.linea2 = linea2;
+    public String getImagen() {
+        return imagen;
     }
 
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public Servicio(String linea1, String linea2, int image) {
-        this.linea1 = linea1;
-        this.linea2 = linea2;
-        this.image = image;
-    }
-
-    public Servicio(String linea1, int image) {
-        this.linea1 = linea1;
-        this.image = image;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 }

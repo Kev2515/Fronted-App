@@ -1,6 +1,9 @@
 package com.example.netjob;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +16,11 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.netjob.Model.Categoria;
+import com.example.netjob.Model.DestacadoAdapter;
+import com.example.netjob.Model.Servicio;
 import com.example.netjob.Utils.Apis;
 import com.example.netjob.Utils.CategoriaService;
+import com.example.netjob.Utils.DestacadoService;
 import com.example.netjob.databinding.ActivityHomeBinding;
 
 import java.util.ArrayList;
@@ -24,7 +30,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Home extends AppCompatActivity implements CategoriaService, AdapterView.OnItemClickListener {
+public class Home extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     ActivityHomeBinding binding;
 
@@ -35,9 +41,12 @@ public class Home extends AppCompatActivity implements CategoriaService, Adapter
     private ImageButton Perfil;
 
     GridView listaCategorias;
+    RecyclerView recycler;
     List<Categoria> categorias = new ArrayList<>();
+    List<Servicio> destacados = new ArrayList<>();
     CategoriaAdapter categoriaAdapter;
     CategoriaService categoriaService;
+    DestacadoService destacadoService;
     EditText buscador;
     String token;
 
@@ -47,28 +56,39 @@ public class Home extends AppCompatActivity implements CategoriaService, Adapter
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        Inicio = findViewById(R.id.imageButton);
+        Buzon = findViewById(R.id.imageButton1);
+        Buscar = findViewById(R.id.imageButton2);
+        Favoritos = findViewById(R.id.imageButton3);
+        Perfil = findViewById(R.id.imageButton4);
+
         categoriaService = Apis.getCategoriaService();
+        destacadoService = Apis.getDestacadoService();
         token = getIntent().getStringExtra("token");
 
         listaCategorias= findViewById(R.id.gridView);
 
         listaCategorias.setOnItemClickListener(this);
 
-        ListarCategorias();
+        recycler= findViewById(R.id.recycler);
 
-        CategoriaAdapter gridAdapter = new CategoriaAdapter(Home.this, R.layout.categoria, categorias);
-        binding.gridView.setAdapter(gridAdapter);
+        ListarDestacados();
+        ListarCategorias();
 
 
         binding.gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                bindUi();
 
                 Toast.makeText(Home.this, "Buscando " + categorias.get(position).getName(), Toast.LENGTH_SHORT).show();
 
-
-
+                Intent intent = new Intent(Home.this, ListaServicios.class);
+                intent.putExtra("category" , categorias.get(position).getName());
+                Log.d("category", categorias.get(position).getName());
+                intent.putExtra("token" , token);
+                startActivity(intent);
+                finish();
 
 
                 Inicio.setOnClickListener(new View.OnClickListener() {
@@ -103,14 +123,6 @@ public class Home extends AppCompatActivity implements CategoriaService, Adapter
                 });
             }
 
-            private void bindUi() {
-
-                Inicio = findViewById(R.id.imageButton);
-                Buzon = findViewById(R.id.imageButton1);
-                Buscar = findViewById(R.id.imageButton2);
-                Favoritos = findViewById(R.id.imageButton3);
-                Perfil = findViewById(R.id.imageButton4);
-            }
 
             private void goToInicio() {
                 Intent intent = new Intent(Home.this, Home.class);
@@ -145,6 +157,7 @@ public class Home extends AppCompatActivity implements CategoriaService, Adapter
 
         });
     }
+
     public void BuscarServicio(View view) {
         if (!buscador.getText().toString().isEmpty()) {
             Intent intent = new Intent(Home.this, ListaServicios.class);
@@ -161,7 +174,7 @@ public class Home extends AppCompatActivity implements CategoriaService, Adapter
         call.enqueue(new Callback<List<Categoria>>() {
             @Override
             public void onResponse(Call<List<Categoria>> call, Response<List<Categoria>> response) {
-                Log.d("status", response.toString());
+                //Log.d("status", response.toString());
                 categorias = response.body();
                 categoriaAdapter = new CategoriaAdapter(Home.this, R.layout.categoria, categorias);
                 listaCategorias.setAdapter(categoriaAdapter);
@@ -174,20 +187,40 @@ public class Home extends AppCompatActivity implements CategoriaService, Adapter
         });
     }
 
+    private void ListarDestacados() {
+        Call<List<Servicio>> call=destacadoService.getServicios("Bearer "+ token,  "application/json");
+        call.enqueue(new Callback<List<Servicio>>() {
+            @Override
+            public void onResponse(Call<List<Servicio>> call, Response<List<Servicio>> response) {
+                //Log.d("status", response.toString());
+                destacados = response.body();
+                DestacadoAdapter destacadoAdapter = new DestacadoAdapter((destacados));
+                RecyclerView recyclerViewDestacados = findViewById(R.id.recycler);
+                recyclerViewDestacados.setAdapter(destacadoAdapter);
+                recyclerViewDestacados.setLayoutManager(new LinearLayoutManager(Home.this, LinearLayoutManager.HORIZONTAL, false));
+            }
+
+            @Override
+            public void onFailure(Call<List<Servicio>> call, Throwable t) {
+                Log.d("response", t.getMessage());
+            }
+        });
+    }
+
+
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
         Intent intent = new Intent(Home.this, ListaServicios.class);
         intent.putExtra("category" , categorias.get(position).getName());
-        Log.d("category", categorias.get(position).getName());
-        intent.putExtra("token" , token);
+        Log.d("id", String.valueOf(position));
+        intent.putExtra("id" , position);
         startActivity(intent);
         finish();
     }
 
-    @Override
-    public Call<List<Categoria>> getCategorias(String auth, String contentType) {
-        return null;
+    public void GoToBuzon(View view) {
+
     }
 }
 

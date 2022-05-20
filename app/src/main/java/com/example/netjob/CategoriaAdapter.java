@@ -54,6 +54,7 @@ public class CategoriaAdapter extends ArrayAdapter {
         image.setImageBitmap(decodedByte);
 
 
+
         return convertView;
     }
 }

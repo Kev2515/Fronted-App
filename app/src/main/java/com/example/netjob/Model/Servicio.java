@@ -3,7 +3,17 @@ package com.example.netjob.Model;
 public class Servicio {
 
     String titulo;
-    String imagen;
+    Categoria[] categorias;
+
+    public Categoria[] getCategoria() {
+        return categorias;
+    }
+
+    public void setCategoria(Categoria[] categoria) {
+        this.categorias = categorias;
+    }
+
+
 
     public String getTitulo() {
         return titulo;
@@ -13,11 +23,7 @@ public class Servicio {
         this.titulo = titulo;
     }
 
-    public String getImagen() {
-        return imagen;
-    }
 
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
+
+
 }

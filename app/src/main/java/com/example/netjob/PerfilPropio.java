@@ -10,52 +10,12 @@ import android.widget.ImageButton;
 
 public class PerfilPropio extends AppCompatActivity {
 
-    private ImageButton Inicio;
-    private ImageButton Buzon;
-    private ImageButton Buscar;
-    private ImageButton Favoritos;
-    private ImageButton Perfil;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_propio);
 
-
-        bindUi();
-
-        Inicio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToInicio();
-            }
-        });
-        Buzon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToBuzon();
-            }
-        });
-        Buscar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToBuscar();
-            }
-        });
-        Favoritos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToFavoritos();
-            }
-        });
-        Perfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToPerfil();
-            }
-        });
 
     }
     public void Historial(View view) {
@@ -68,36 +28,57 @@ public class PerfilPropio extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    private void bindUi() {
 
-        Inicio = findViewById(R.id.imageButton);
-        Buzon = findViewById(R.id.imageButton1);
-        Buscar = findViewById(R.id.imageButton2);
-        Favoritos = findViewById(R.id.imageButton3);
-        Perfil = findViewById(R.id.imageButton4);
-    }
-    private void goToInicio(){
-        Intent intent = new Intent(PerfilPropio.this, Home.class);
+    public void BtnHome(View view) {
+        Intent intent = new Intent(this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-    private void goToBuzon(){
-        Intent intent = new Intent(PerfilPropio.this, Buzon.class);
+
+    public void BtnBuzon(View view) {
+        Intent intent = new Intent(this, Buzon.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-    private void goToBuscar(){
-        Intent intent = new Intent(PerfilPropio.this, ListaServicios.class);
+
+    public void BtnBuscar(View view) {
+        Intent intent = new Intent(this, ListaServicios.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-    private void goToFavoritos(){
-        Intent intent = new Intent(PerfilPropio.this, Favoritos.class);
+
+    public void BtnFavoritos(View view) {
+        Intent intent = new Intent(this, Favoritos.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-    private void goToPerfil(){
-        Intent intent = new Intent(PerfilPropio.this, PerfilPropio.class);
+
+    public void BtnPerfil(View view) {
+        Intent intent = new Intent(this, PerfilPropio.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnEditarPerfil(View view) {
+        Intent intent = new Intent(this, EditarPerfil.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnNuevoServicio(View view) {
+        Intent intent = new Intent(this, Servicio.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnPago(View view) {
+        Intent intent = new Intent(this, FormaPago.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnMisServicios(View view) {
+        Intent intent = new Intent(this, ListaServicios.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

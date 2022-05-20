@@ -60,18 +60,22 @@
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alpha="1"
         android:background="@color/white"
+        android:alpha="1"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="660dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
         <ImageButton
+            android:onClick="BtnHome"
             android:id="@+id/imageButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -80,6 +84,7 @@
             android:src="@drawable/inicio"></ImageButton>
 
         <ImageButton
+            android:onClick="BtnBuzon"
             android:id="@+id/imageButton1"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -88,6 +93,7 @@
             android:src="@drawable/buzon"></ImageButton>
 
         <ImageButton
+            android:onClick="BtnBuscar"
             android:id="@+id/imageButton2"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -96,6 +102,7 @@
             android:src="@drawable/buscar"></ImageButton>
 
         <ImageButton
+            android:onClick="BtnFavoritos"
             android:id="@+id/imageButton3"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -104,14 +111,13 @@
             android:src="@drawable/favorito"></ImageButton>
 
         <ImageButton
+            android:onClick="BtnPerfil"
             android:id="@+id/imageButton4"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
             android:src="@drawable/perfil"></ImageButton>
-
-
     </LinearLayout>
 
     <TextView

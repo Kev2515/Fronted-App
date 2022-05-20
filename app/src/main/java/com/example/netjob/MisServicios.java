@@ -22,11 +22,7 @@ public class MisServicios extends AppCompatActivity {
 
     @NonNull ActivityMisServiciosBinding binding;
 
-    private ImageButton Inicio;
-    private ImageButton Buzon;
-    private ImageButton Buscar;
-    private ImageButton Favoritos;
-    private ImageButton Perfil;
+
     public Button NuevoServicio;
 
     @Override
@@ -45,40 +41,6 @@ public class MisServicios extends AppCompatActivity {
         binding.servicioContratado.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                bindUi();
-
-        bindUi();
-
-        Inicio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToInicio();
-            }
-        });
-        Buzon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToBuzon();
-            }
-        });
-        Buscar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToBuscar();
-            }
-        });
-        Favoritos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToFavoritos();
-            }
-        });
-        Perfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToPerfil();
-            }
-        });
 
         NuevoServicio.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,45 +48,47 @@ public class MisServicios extends AppCompatActivity {
         });
 
     }
-    private void bindUi() {
 
-        Inicio = findViewById(R.id.imageButton);
-        Buzon = findViewById(R.id.imageButton1);
-        Buscar = findViewById(R.id.imageButton2);
-        Favoritos = findViewById(R.id.imageButton3);
-        Perfil = findViewById(R.id.imageButton4);
-        NuevoServicio = findViewById(R.id.nuevoServicio);
-    }
-    private void goToInicio(){
-        Intent intent = new Intent(MisServicios.this, Home.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
-    private void goToBuzon(){
-        Intent intent = new Intent(MisServicios.this, Buzon.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
-    private void goToBuscar(){
-        Intent intent = new Intent(MisServicios.this, ListaServicios.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
-    private void goToFavoritos(){
-        Intent intent = new Intent(MisServicios.this, Favoritos.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
-    private void goToPerfil(){
-        Intent intent = new Intent(MisServicios.this, PerfilPropio.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
     private void goToNuevoServicio(){
                 Intent intent = new Intent(MisServicios.this, ListaServicios.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });
+    }
+    public void BtnHome(View view) {
+        Intent intent = new Intent(this, Home.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnBuzon(View view) {
+        Intent intent = new Intent(this, Buzon.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnBuscar(View view) {
+        Intent intent = new Intent(this, ListaServicios.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnFavoritos(View view) {
+        Intent intent = new Intent(this, Favoritos.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnPerfil(View view) {
+        Intent intent = new Intent(this, PerfilPropio.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnServicio(View view) {
+        Intent intent = new Intent(this, com.example.netjob.Servicio.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 }

@@ -5,18 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 
-public class Buzon extends AppCompatActivity {
-
+public class Servicio extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_buzon);
-
+        setContentView(R.layout.activity_servicio);
     }
-
     public void BtnHome(View view) {
         Intent intent = new Intent(this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -47,3 +43,4 @@ public class Buzon extends AppCompatActivity {
         startActivity(intent);
     }
 }
+

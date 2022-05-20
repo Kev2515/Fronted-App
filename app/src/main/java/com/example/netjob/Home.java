@@ -34,12 +34,6 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
 
     ActivityHomeBinding binding;
 
-    private ImageButton Inicio;
-    private ImageButton Buzon;
-    private ImageButton Buscar;
-    private ImageButton Favoritos;
-    private ImageButton Perfil;
-
     GridView listaCategorias;
     RecyclerView recycler;
     List<Categoria> categorias = new ArrayList<>();
@@ -55,12 +49,6 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
         super.onCreate(savedInstanceState);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        Inicio = findViewById(R.id.imageButton);
-        Buzon = findViewById(R.id.imageButton1);
-        Buscar = findViewById(R.id.imageButton2);
-        Favoritos = findViewById(R.id.imageButton3);
-        Perfil = findViewById(R.id.imageButton4);
 
         categoriaService = Apis.getCategoriaService();
         destacadoService = Apis.getDestacadoService();
@@ -90,70 +78,7 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
                 startActivity(intent);
                 finish();
 
-
-                Inicio.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goToInicio();
-                    }
-                });
-                Buzon.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goToBuzon();
-                    }
-                });
-                Buscar.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goToBuscar();
-                    }
-                });
-                Favoritos.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goToFavoritos();
-                    }
-                });
-                Perfil.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        goToPerfil();
-                    }
-                });
             }
-
-
-            private void goToInicio() {
-                Intent intent = new Intent(Home.this, Home.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-
-            private void goToBuzon() {
-                Intent intent = new Intent(Home.this, Buzon.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-
-            private void goToBuscar() {
-                Intent intent = new Intent(Home.this, ListaServicios.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-
-            private void goToFavoritos() {
-                Intent intent = new Intent(Home.this, Favoritos.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-
-            private void goToPerfil() {
-                Intent intent = new Intent(Home.this, PerfilPropio.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-
 
         });
     }
@@ -161,9 +86,6 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
     public void BuscarServicio(View view) {
         if (!buscador.getText().toString().isEmpty()) {
             Intent intent = new Intent(Home.this, ListaServicios.class);
-            intent.putExtra("parametro", buscador.getText().toString());
-            Log.d("parametro", buscador.getText().toString());
-            intent.putExtra("token" , token);
             startActivity(intent);
             finish();
         }
@@ -219,8 +141,36 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
         finish();
     }
 
-    public void GoToBuzon(View view) {
 
+    public void BtnHome(View view) {
+            Intent intent = new Intent(Home.this, Home.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        }
+
+    public void BtnBuzon(View view) {
+        Intent intent = new Intent(Home.this, Buzon.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnBuscar(View view) {
+        Intent intent = new Intent(Home.this, ListaServicios.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnFavoritos(View view) {
+        Intent intent = new Intent(Home.this, Favoritos.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnPerfil(View view) {
+        Intent intent = new Intent(Home.this, PerfilPropio.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
 }
+
 

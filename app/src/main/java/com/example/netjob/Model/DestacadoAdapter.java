@@ -60,9 +60,12 @@ public class DestacadoAdapter extends RecyclerView.Adapter<DestacadoAdapter.View
         @RequiresApi(api = Build.VERSION_CODES.O)
         public void setItem(final Servicio servicio) {
 
-            //byte [] bytes = Base64.getDecoder().decode(servicio.getImagen());
-            //Bitmap decodedByte = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-            //imagen.setImageBitmap(decodedByte);
+            Categoria[] categorias = servicio.getCategoria();
+            if (categorias.length > 0) {
+                byte[] bytes = Base64.getDecoder().decode(servicio.getCategoria()[0].getImage());
+                Bitmap decodedByte = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                imagen.setImageBitmap(decodedByte);
+            }
             titulo.setText(servicio.getTitulo());
 
         }

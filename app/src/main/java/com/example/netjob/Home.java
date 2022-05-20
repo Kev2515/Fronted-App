@@ -86,6 +86,9 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
     public void BuscarServicio(View view) {
         if (!buscador.getText().toString().isEmpty()) {
             Intent intent = new Intent(Home.this, ListaServicios.class);
+            intent.putExtra("parametro", buscador.getText().toString());
+            Log.d("parametro", buscador.getText().toString());
+            intent.putExtra("token" , token);
             startActivity(intent);
             finish();
         }

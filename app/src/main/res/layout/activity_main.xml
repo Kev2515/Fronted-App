@@ -1,76 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="224dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="93dp"
-        android:layout_marginEnd="94dp"
-        android:text="NetJob"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="208dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="102dp"
-        android:layout_marginBottom="30dp"
-        android:text="Find your Service Worker"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints" />
-
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="174dp"
-        android:layout_height="101dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="117dp"
-        android:layout_marginBottom="15dp"
-        android:text="Entrar como invitado"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        android:background="@drawable/button_rounded"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="174dp"
-        android:layout_height="101dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="117dp"
-        android:layout_marginBottom="200dp"
-        android:text="Acceder y registrarme"
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/letra"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:ignore="MissingConstraints"
-        android:background="@drawable/button_rounded"/>
-
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@ import java.util.List;
 
 public class MisServicios extends AppCompatActivity {
 
-    @NonNull ActivityMisServiciosBinding binding;
+    ActivityMisServiciosBinding binding;
 
 
     public Button NuevoServicio;

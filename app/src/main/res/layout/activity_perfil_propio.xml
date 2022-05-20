@@ -45,9 +45,9 @@
             android:layout_marginStart="250dp"
             android:layout_marginEnd="118dp"
             android:src="@drawable/lapiz"
+            android:onClick="BtnEditarPerfil"
             app:civ_border_color="#121212"
             app:civ_border_width="2dp"
-            android:onClick="BtnEditarPerfil"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,16 +89,18 @@
         android:id="@+id/linearLayout2"
         android:layout_width="412dp"
         android:layout_height="108dp"
+        android:layout_marginTop="34dp"
         android:alpha="0.8"
         android:background="@android:color/darker_gray"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="554dp">
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/button4"
@@ -122,8 +124,8 @@
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:alpha="1"
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
@@ -131,51 +133,52 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         tools:ignore="MissingConstraints">
 
         <ImageButton
-            android:onClick="BtnHome"
             android:id="@+id/imageButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnHome"
             android:src="@drawable/inicio"></ImageButton>
 
         <ImageButton
-            android:onClick="BtnBuzon"
             android:id="@+id/imageButton1"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnBuzon"
             android:src="@drawable/buzon"></ImageButton>
 
         <ImageButton
-            android:onClick="BtnBuscar"
             android:id="@+id/imageButton2"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnBuscar"
             android:src="@drawable/buscar"></ImageButton>
 
         <ImageButton
-            android:onClick="BtnFavoritos"
             android:id="@+id/imageButton3"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnFavoritos"
             android:src="@drawable/favorito"></ImageButton>
 
         <ImageButton
-            android:onClick="BtnPerfil"
             android:id="@+id/imageButton4"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnPerfil"
             android:src="@drawable/perfil"></ImageButton>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

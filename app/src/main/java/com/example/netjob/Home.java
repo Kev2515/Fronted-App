@@ -146,9 +146,7 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
 
 
     public void BtnHome(View view) {
-            Intent intent = new Intent(Home.this, Home.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
+
         }
 
     public void BtnBuzon(View view) {

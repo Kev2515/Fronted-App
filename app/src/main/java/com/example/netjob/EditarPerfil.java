@@ -14,8 +14,7 @@ import android.widget.TextView;
 
 public class EditarPerfil extends AppCompatActivity {
 
-    TextView localidad;
-    Spinner localidades;
+    Spinner spinProvincias;
 
     public Button NuevoServicio;
     public Button MisServicios;
@@ -26,15 +25,12 @@ public class EditarPerfil extends AppCompatActivity {
         setContentView(R.layout.activity_editar_perfil);
 
         NuevoServicio = findViewById(R.id.button);
-        MisServicios = findViewById(R.id.button3);
+        MisServicios = findViewById(R.id.BtnMisServicios);
 
-        localidad=findViewById(R.id.editTextTextPersonName7);
-        localidades=findViewById(R.id.spinner);
-
-        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,R.array.countries, android.R.layout.simple_spinner_item);
-
-        localidades.setAdapter(adapter);
-
+        spinProvincias= (Spinner) findViewById(R.id.spinProvincia);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.provincias_array));
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinProvincias.setAdapter(adapter);
     }
     public void BtnHome(View view) {
         Intent intent = new Intent(this, Home.class);
@@ -64,5 +60,29 @@ public class EditarPerfil extends AppCompatActivity {
         Intent intent = new Intent(this, PerfilPropio.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+    }
+
+    public void BtnNuevoServicio(View view) {
+        Intent intent = new Intent(this, Servicio.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnPago(View view) {
+        Intent intent = new Intent(this, FormaPago.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnMisServicios(View view) {
+        Intent intent = new Intent(this, ListaServicios.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    public void BtnMejorarSuscripcion(View view) {
+    }
+
+    public void guardarCambios(View view) {
     }
 }

@@ -14,8 +14,7 @@ import android.widget.TextView;
 
 public class EditarPerfil extends AppCompatActivity {
 
-    TextView localidad;
-    Spinner localidades;
+    Spinner spinProvincias;
 
     public Button NuevoServicio;
     public Button MisServicios;
@@ -28,13 +27,10 @@ public class EditarPerfil extends AppCompatActivity {
         NuevoServicio = findViewById(R.id.button);
         MisServicios = findViewById(R.id.BtnMisServicios);
 
-        //localidad=findViewById(R.id.editTextTextPersonName7);
-        //localidades=findViewById(R.id.spinner);
-
-        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,R.array.countries, android.R.layout.simple_spinner_item);
-
-        localidades.setAdapter(adapter);
-
+        spinProvincias= (Spinner) findViewById(R.id.spinProvincia);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.provincias_array));
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinProvincias.setAdapter(adapter);
     }
     public void BtnHome(View view) {
         Intent intent = new Intent(this, Home.class);

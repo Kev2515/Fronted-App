@@ -36,6 +36,7 @@
                 android:src="@drawable/lapiz" />
         </LinearLayout>
 
+
         <EditText
             android:id="@+id/nombre"
             android:layout_width="350dp"
@@ -66,15 +67,36 @@
             android:hint="Correo"
             android:inputType="textPersonName"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Provincia"
+                android:textSize="18dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"/>
+            <Spinner
+                android:id="@+id/spinProvincia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:scrollbars="vertical"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+
         <EditText
             android:id="@+id/localidad"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
             android:hint="Localidad"
             android:inputType="textPersonName"/>
+
 
         <EditText
             android:id="@+id/formacion"

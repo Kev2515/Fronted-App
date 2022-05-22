@@ -26,10 +26,10 @@ public class EditarPerfil extends AppCompatActivity {
         setContentView(R.layout.activity_editar_perfil);
 
         NuevoServicio = findViewById(R.id.button);
-        MisServicios = findViewById(R.id.button3);
+        MisServicios = findViewById(R.id.BtnMisServicios);
 
-        localidad=findViewById(R.id.editTextTextPersonName7);
-        localidades=findViewById(R.id.spinner);
+        //localidad=findViewById(R.id.editTextTextPersonName7);
+        //localidades=findViewById(R.id.spinner);
 
         ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,R.array.countries, android.R.layout.simple_spinner_item);
 
@@ -82,5 +82,11 @@ public class EditarPerfil extends AppCompatActivity {
         Intent intent = new Intent(this, ListaServicios.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+    }
+
+    public void BtnMejorarSuscripcion(View view) {
+    }
+
+    public void guardarCambios(View view) {
     }
 }

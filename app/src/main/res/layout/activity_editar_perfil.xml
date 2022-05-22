@@ -1,294 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".EditarPerfil">
-
-<LinearLayout
-    android:id="@+id/linearLayout10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:alpha="1"
-    android:background="@android:color/darker_gray"
-    android:gravity="center"
-    android:orientation="horizontal"
-    android:padding="10dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:layout_height="match_parent"
+    tools:context=".EditarPerfil">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginLeft="70dp"
-        android:src="@mipmap/ic_launcher"
-        app:civ_border_color="#FF000000" />
-
-    <ImageButton
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@android:color/darker_gray"
-        android:src="@drawable/lapiz"/>
-
-</LinearLayout>
-
-
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="358dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:hint="Nombre"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName6"
-        android:layout_width="357dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:hint="Apellidos"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="357dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:hint="Apellidos"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6"
-        tools:ignore="MissingConstraints" />
-
-
-    <TextView
-        android:id="@+id/editTextTextPersonName7"
-        android:layout_width="150dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:text="Localidad"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
-        tools:ignore="MissingConstraints" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName5"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="30dp"
+                android:src="@mipmap/ic_launcher"
+                app:civ_border_color="#FF000000" />
+
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="40dp"
+                android:background="@android:color/darker_gray"
+                android:src="@drawable/lapiz" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Nombre"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/apellidos"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Apellidos"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/correo"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Correo"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/localidad"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Localidad"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/formacion"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Formación"
+            android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/profesion"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Profesión"
+            android:inputType="textPersonName"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/BtnNuevoServicio"
+                android:layout_width="115dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:text="Nuevo Servicio"
+                android:onClick="BtnNuevoServicio"
+                android:textAlignment="center"
+                android:textSize="8sp"/>
+            <Button
+                android:id="@+id/BtnMejorarSuscripcion"
+                android:layout_width="115dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:text="Mejorar suscripción"
+                android:onClick="BtnMejorarSuscripcion"
+                android:textAlignment="center"
+                android:textSize="8sp"/>
+            <Button
+                android:id="@+id/BtnMisServicios"
+                android:layout_width="115dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:text="Mis Servicios"
+                android:onClick="BtnMisServicios"
+                android:textAlignment="center"
+                android:textSize="8sp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/guardarCambios"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_rounded"
+            android:text="Guardar Cambios"
+            android:onClick="guardarCambios"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textSize="14sp"/>
+        </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName7"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="357dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:hint="Apellidos"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints">
 
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnHome"
+            android:src="@drawable/inicio"></ImageButton>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="357dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:hint="Apellidos"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
-        tools:ignore="MissingConstraints" />
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnBuzon"
+            android:src="@drawable/buzon"></ImageButton>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="357dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:hint="Apellidos"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        tools:ignore="MissingConstraints" />
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnBuscar"
+            android:src="@drawable/buscar"></ImageButton>
 
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnFavoritos"
+            android:src="@drawable/favorito"></ImageButton>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="116dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/button_rounded"
-        android:text="Nuevo Servicio"
-        android:onClick="BtnNuevoServicio"
-        android:textAlignment="center"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-        tools:ignore="MissingConstraints,OnClick" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="116dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="43dp"
-        android:background="@drawable/button_rounded"
-        android:text="Mejora tu suscripción"
-        android:onClick="BtnPago"
-        android:textAlignment="center"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
-        app:layout_constraintVertical_bias="0.535"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="116dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="19dp"
-        android:background="@drawable/button_rounded"
-        android:text="Mis Servicios"
-        android:onClick="BtnMisServicios"
-        android:textAlignment="center"
-        android:textSize="9sp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="91dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/button_rounded"
-        android:text="Guardar Cambios"
-        android:textAlignment="center"
-        android:textSize="9sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        tools:ignore="MissingConstraints,UnknownId" />
-
-<LinearLayout
-    android:id="@+id/linearLayout4"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:alpha="1"
-    android:gravity="center"
-    android:orientation="horizontal"
-    android:padding="10dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    tools:ignore="MissingConstraints">
-
-    <ImageButton
-        android:onClick="BtnHome"
-        android:id="@+id/imageButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="12dp"
-        android:background="@color/design_default_color_on_primary"
-        android:src="@drawable/inicio"></ImageButton>
-
-    <ImageButton
-        android:onClick="BtnBuzon"
-        android:id="@+id/imageButton1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="12dp"
-        android:background="@color/design_default_color_on_primary"
-        android:src="@drawable/buzon"></ImageButton>
-
-    <ImageButton
-        android:onClick="BtnBuscar"
-        android:id="@+id/imageButton2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="12dp"
-        android:background="@color/design_default_color_on_primary"
-        android:src="@drawable/buscar"></ImageButton>
-
-    <ImageButton
-        android:onClick="BtnFavoritos"
-        android:id="@+id/imageButton3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="12dp"
-        android:background="@color/design_default_color_on_primary"
-        android:src="@drawable/favorito"></ImageButton>
-
-    <ImageButton
-        android:onClick="BtnPerfil"
-        android:id="@+id/imageButton4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="12dp"
-        android:background="@color/design_default_color_on_primary"
-        android:src="@drawable/perfil"></ImageButton>
-</LinearLayout>
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnPerfil"
+            android:src="@drawable/perfil"></ImageButton>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -33,8 +33,6 @@ public class MisServicios extends AppCompatActivity {
 
         List<Servicio> servicios = new ArrayList<>();
 
-
-
         ServicioAdapter gridAdapter = new ServicioAdapter(MisServicios.this, R.layout.servicio, servicios);
         binding.servicioContratado.setAdapter(gridAdapter);
 

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 
 public class Buzon extends AppCompatActivity {
 
@@ -21,6 +20,7 @@ public class Buzon extends AppCompatActivity {
         Intent intent = new Intent(this, Home.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+
     }
 
     public void BtnBuzon(View view) {
@@ -45,5 +45,12 @@ public class Buzon extends AppCompatActivity {
         Intent intent = new Intent(this, PerfilPropio.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+    }
+
+    public void BtnChat(View view) {
+        Intent intent = new Intent(Buzon.this, Chat.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }

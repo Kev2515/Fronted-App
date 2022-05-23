@@ -1,0 +1,122 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Buzon">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            android:src="@drawable/profile" />
+
+        <TextView
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Chat"
+            android:textAlignment="inherit"
+            android:textSize="36dp" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:src="@drawable/buscar" />
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        android:hint="Fecha"
+        android:padding="15dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="166dp"
+        tools:layout_editor_absoluteY="101dp" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="15dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="281dp" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="15dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="203dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/edit_text_background"
+        android:padding="15dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="245dp"
+        tools:layout_editor_absoluteY="371dp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:alpha="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageButton
+            android:id="@+id/emojiButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnHome"
+            android:src="@drawable/happy"></ImageButton>
+
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="Mensaje..."
+            android:padding="15dp"/>
+
+        <ImageButton
+            android:onClick="BtnHome"
+            android:id="@+id/sendButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="50dp"
+            android:background="@color/design_default_color_on_primary"
+            android:src="@drawable/send"></ImageButton>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

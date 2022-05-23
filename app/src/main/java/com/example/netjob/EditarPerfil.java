@@ -45,7 +45,7 @@ public class EditarPerfil extends AppCompatActivity {
     }
 
     public void BtnBuscar(View view) {
-        Intent intent = new Intent(this, ListaServicios.class);
+        Intent intent = new Intent(this, PerfilPropio.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
@@ -68,19 +68,16 @@ public class EditarPerfil extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void BtnPago(View view) {
+    public void BtnMejorarSuscripcion(View view) {
         Intent intent = new Intent(this, FormaPago.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
     public void BtnMisServicios(View view) {
-        Intent intent = new Intent(this, ListaServicios.class);
+        Intent intent = new Intent(this, MisServicios.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
-    }
-
-    public void BtnMejorarSuscripcion(View view) {
     }
 
     public void guardarCambios(View view) {

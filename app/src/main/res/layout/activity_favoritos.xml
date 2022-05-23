@@ -7,145 +7,130 @@
     android:layout_height="match_parent"
     tools:context=".Favoritos">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+    <LinearLayout
+        android:id="@+id/linearLayout9"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:alpha="0.8"
+        android:layout_height="wrap_content"
         android:background="@android:color/darker_gray"
         android:gravity="center"
-        android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
             android:layout_width="120dp"
-            android:layout_height="107dp"
-            android:layout_marginStart="150dp"
-            android:layout_marginEnd="150dp"
+            android:layout_height="120dp"
             android:src="@mipmap/ic_launcher"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.555"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            app:civ_border_color="#FF000000" />
+    </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="Favoritos"
+            android:textSize="22dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/favorito" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:alpha="1"
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:onClick="BtnHome"
             android:id="@+id/imageButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnHome"
             android:src="@drawable/inicio"></ImageButton>
 
         <ImageButton
-            android:onClick="BtnBuzon"
             android:id="@+id/imageButton1"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnBuzon"
             android:src="@drawable/buzon"></ImageButton>
 
         <ImageButton
-            android:onClick="BtnBuscar"
-            android:id="@+id/imageButton2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:src="@drawable/buscar"></ImageButton>
-
-        <ImageButton
-            android:onClick="BtnFavoritos"
             android:id="@+id/imageButton3"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnFavoritos"
             android:src="@drawable/favorito"></ImageButton>
 
         <ImageButton
-            android:onClick="BtnPerfil"
             android:id="@+id/imageButton4"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
             android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnPerfil"
             android:src="@drawable/perfil"></ImageButton>
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/design_default_color_on_primary"
+            android:onClick="BtnBuscar"
+            android:src="@drawable/back"></ImageButton>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="92dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="302dp"
-        android:layout_marginBottom="5dp"
-        android:text="Mis Favoritos"
-        android:textAlignment="center"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/favoritos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
     <GridView
         android:id="@+id/favoritos"
-        android:layout_width="422dp"
-        android:layout_height="481dp"
-        android:numColumns="0"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:numColumns="1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image4"
-        android:layout_width="24dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="272dp"
-        android:src="@drawable/favorito"
-        app:civ_border_color="#121212"
-        app:civ_border_width="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/favoritos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout12" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

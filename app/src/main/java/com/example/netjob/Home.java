@@ -84,15 +84,11 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
     }
 
     public void BuscarServicio(View view) {
-        if (!buscador.getText().toString().isEmpty()) {
             Intent intent = new Intent(Home.this, ListaServicios.class);
-            intent.putExtra("parametro", buscador.getText().toString());
-            Log.d("parametro", buscador.getText().toString());
-            intent.putExtra("token" , token);
             startActivity(intent);
             finish();
         }
-    }
+
 
     private void ListarCategorias() {
         Call<List<Categoria>> call=categoriaService.getCategorias("Bearer "+ token,  "application/json");
@@ -155,11 +151,11 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
         startActivity(intent);
     }
 
-    public void BtnBuscar(View view) {
-        Intent intent = new Intent(Home.this, ListaServicios.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-    }
+    //public void BtnBuscar(View view) {
+        //Intent intent = new Intent(Home.this, Home.class);
+       // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        //startActivity(intent);
+    //}
 
     public void BtnFavoritos(View view) {
         Intent intent = new Intent(Home.this, Favoritos.class);

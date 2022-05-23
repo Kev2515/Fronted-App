@@ -12,6 +12,7 @@ public class Servicio {
     public void setCategoria(Categoria[] categoria) {
         this.categorias = categorias;
     }
+
     public String getTitulo() {
         return titulo;
     }

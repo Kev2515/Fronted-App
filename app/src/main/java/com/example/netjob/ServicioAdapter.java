@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.netjob.Model.Servicio;
-import com.example.netjob.Model.Servicios;
 
 
 import java.util.List;
@@ -45,7 +44,7 @@ public class ServicioAdapter extends ArrayAdapter {
 
 
         //ImageView image = convertView.findViewById(R.id.servicioImage);
-        //image.setImageResource(servicios.get(position).getImagen());
+        //image.setImageResource(servicios.get(position).getImage());
 
 
         return convertView;

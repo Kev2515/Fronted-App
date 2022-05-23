@@ -30,10 +30,10 @@ public class Favoritos extends AppCompatActivity {
 
         List<Favorito> favoritos = new ArrayList<>();
 
-        favoritos.add(new Favorito("Kevin", "Fisioterapeuta", R.drawable.albaniles));
-        favoritos.add(new Favorito("Álex", "Electricista", R.drawable.albaniles));
-        favoritos.add(new Favorito("Connor", "Adiestrador", R.drawable.albaniles));
-        favoritos.add(new Favorito("Rubén", "Informático", R.drawable.albaniles));
+        favoritos.add(new Favorito("Francisco", "Fisioterapeuta", R.drawable.ancianos));
+        favoritos.add(new Favorito("Jose Luis", "Electricista", R.drawable.electricistas));
+        favoritos.add(new Favorito("Leonard", "Jardinero", R.drawable.jardineros));
+        favoritos.add(new Favorito("Laura", "Informática", R.drawable.profesor_particular));
 
         FavoritoAdapter gridAdapter = new FavoritoAdapter(Favoritos.this, R.layout.favorito, favoritos);
         binding.favoritos.setAdapter(gridAdapter);

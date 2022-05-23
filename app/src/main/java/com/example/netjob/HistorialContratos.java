@@ -31,12 +31,11 @@ public class HistorialContratos extends AppCompatActivity {
 
         List<Contrato> contratos = new ArrayList<>();
 
-        contratos.add(new Contrato("Albañil","Prueba 3", R.drawable.albaniles));
-        contratos.add(new Contrato("Fontanero","Prueba 3", R.drawable.albaniles));
-        contratos.add(new Contrato("Mecanico","Prueba 3", R.drawable.albaniles));
-        contratos.add(new Contrato("Plumero","Prueba 3", R.drawable.albaniles));
-        contratos.add(new Contrato("Cocinero","Prueba 3", R.drawable.albaniles));
-        contratos.add(new Contrato("Profesor","Prueba 3", R.drawable.albaniles));
+        contratos.add(new Contrato("Francisco","Fisioterapeuta", R.drawable.ancianos));
+        contratos.add(new Contrato("Leonard","Jardinero", R.drawable.jardineros));
+        contratos.add(new Contrato("Laura","Informático", R.drawable.profesor_particular));
+        contratos.add(new Contrato("Paco","Cocinero", R.drawable.albaniles));
+        contratos.add(new Contrato("Lucia","Informático", R.drawable.profesor_particular));
 
         ContratoAdapter gridAdapter = new ContratoAdapter(HistorialContratos.this, R.layout.contrato, contratos);
         binding.estadoContrato.setAdapter(gridAdapter);

@@ -7,10 +7,11 @@
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/drawable/button_rounded.xml" value="0.3645" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_buscar_servicio.xml" value="0.3140625" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_buzon.xml" value="0.3140625" />
+        <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_chat.xml" value="0.36041666666666666" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_detalle_servicio.xml" value="0.22" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_editar_perfil.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_favoritos.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_forma_pago.xml" value="0.3140625" />
+        <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_forma_pago.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_historial_contratos.xml" value="0.209375" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_home.xml" value="0.22" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_inicio.xml" value="0.3244535519125683" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_recuperar_c.xml" value="0.209375" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_registro.xml" value="0.209375" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/activity_servicio.xml" value="0.3140625" />
+        <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/categoria.xml" value="0.3244535519125683" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/favorito.xml" value="0.209375" />
         <entry key="..\:/Users/Alejandro/Desktop/Fronted-App/app/src/main/res/layout/servicio.xml" value="0.209375" />
         <entry key="..\:/Users/Alejandro/Desktop/Oficiales/DAM2/Fronted-App/app/src/main/res/layout/activity_buscar_servicio.xml" value="0.4420289855072464" />

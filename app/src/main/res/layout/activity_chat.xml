@@ -3,23 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Buzon">
+    tools:context=".Chat">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
 
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="21dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="15dp"
-            android:src="@drawable/usuario" />
+            android:src="@drawable/perfil" />
 
         <TextView
             android:layout_width="256dp"
@@ -33,77 +38,51 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="15dp"
-            android:src="@drawable/buscar" />
+            android:onClick="Btnback"
+            android:src="@drawable/back" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_margin="15dp"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="246dp"
-        android:layout_marginBottom="58dp"
-        android:background="@color/white"
-        android:hint="Fecha"
-        android:padding="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/editText4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:hint="24/05/2022"
+            android:padding="15dp"/>
 
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_margin="15dp"
-        android:layout_marginStart="245dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="246dp"
-        android:layout_marginBottom="95dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/editText6"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="left"
+            android:layout_margin="15dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="15dp"/>
 
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_margin="15dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="246dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_margin="15dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="15dp"/>
 
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_margin="15dp"
-        android:layout_marginStart="246dp"
-        android:layout_marginTop="193dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="292dp"
-        android:background="@drawable/edit_text_background"
-        android:padding="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText8"
-        tools:ignore="MissingConstraints" />
-
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_margin="15dp"
+            android:background="@drawable/edit_text_background"
+            android:padding="15dp"/>
+    </LinearLayout>
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
@@ -112,7 +91,8 @@
         android:alpha="1"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -125,11 +105,10 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnHome"
-          ></ImageButton>
+            android:src="@drawable/happy"></ImageButton>
 
         <TextView
-            android:layout_width="240dp"
+            android:layout_width="220dp"
             android:layout_height="60dp"
             android:layout_margin="15dp"
             android:background="@drawable/edit_text_background"
@@ -137,13 +116,12 @@
             android:padding="15dp"/>
 
         <ImageButton
-            android:onClick="BtnHome"
             android:id="@+id/sendButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:padding="50dp"
             android:background="@color/design_default_color_on_primary"
-            ></ImageButton>
+            android:src="@drawable/send"></ImageButton>
 
     </LinearLayout>
 

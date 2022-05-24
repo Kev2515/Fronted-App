@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="1"
-        android:background="@android:color/darker_gray"
+        android:background="#A381BD"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
@@ -45,7 +45,7 @@
             <ImageButton
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:background="@android:color/darker_gray"
+                android:background="#A381BD"
                 android:onClick="BtnEditarPerfil"
                 android:src="@drawable/lapiz"></ImageButton>
         </LinearLayout>
@@ -53,24 +53,88 @@
 
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="378dp"
-        android:layout_height="328dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="16dp"
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:layout_marginBottom="18dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/apellidos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10"
+        tools:ignore="MissingConstraints"></TextView>
+
+    <TextView
+        android:id="@+id/apellidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="14dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/correo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre"
+        tools:ignore="MissingConstraints"></TextView>
+
+    <TextView
+        android:id="@+id/correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/localidad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellidos"
+        tools:ignore="MissingConstraints"></TextView>
+
+    <TextView
+        android:id="@+id/localidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textAlignment="center"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/formacion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correo"
+        tools:ignore="MissingConstraints"></TextView>
+
+    <TextView
+        android:id="@+id/formacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:textAlignment="center"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/profesion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/localidad"
+        tools:ignore="MissingConstraints"></TextView>
+
+    <TextView
+        android:id="@+id/profesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:textAlignment="center"
+        android:layout_marginBottom="101dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
+        app:layout_constraintTop_toBottomOf="@+id/formacion"
+        tools:ignore="MissingConstraints"></TextView>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="412dp"
         android:layout_height="108dp"
-        android:layout_marginTop="50dp"
         android:layout_marginBottom="45dp"
         android:alpha="0.8"
         android:background="@android:color/darker_gray"
@@ -81,7 +145,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView">
+        app:layout_constraintTop_toBottomOf="@+id/profesion">
 
         <Button
             android:id="@+id/button4"
@@ -105,59 +169,60 @@
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#E6E6FA"
         android:alpha="1"
-        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
         <ImageButton
+            android:onClick="BtnHome"
             android:id="@+id/imageButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnHome"
+            android:background="#E6E6FA"
             android:src="@drawable/inicio"></ImageButton>
 
         <ImageButton
+            android:onClick="BtnBuzon"
             android:id="@+id/imageButton1"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnBuzon"
+            android:background="#E6E6FA"
             android:src="@drawable/buzon"></ImageButton>
 
         <ImageButton
+            android:onClick="BtnFavoritos"
             android:id="@+id/imageButton3"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnFavoritos"
+            android:background="#E6E6FA"
             android:src="@drawable/favorito"></ImageButton>
 
         <ImageButton
+            android:onClick="BtnPerfil"
             android:id="@+id/imageButton4"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnPerfil"
+            android:background="#E6E6FA"
             android:src="@drawable/perfil"></ImageButton>
-
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnBuscar"
+            android:background="#E6E6FA"
             android:src="@drawable/back"></ImageButton>
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

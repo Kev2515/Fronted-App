@@ -11,7 +11,7 @@
         android:id="@+id/linearLayout9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/darker_gray"
+        android:background="#A381BD"
         android:gravity="center"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,68 +54,63 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#E6E6FA"
         android:alpha="1"
-        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
         <ImageButton
+            android:onClick="BtnHome"
             android:id="@+id/imageButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnHome"
+            android:background="#E6E6FA"
             android:src="@drawable/inicio"></ImageButton>
 
         <ImageButton
+            android:onClick="BtnBuzon"
             android:id="@+id/imageButton1"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnBuzon"
+            android:background="#E6E6FA"
             android:src="@drawable/buzon"></ImageButton>
 
         <ImageButton
+            android:onClick="BtnFavoritos"
             android:id="@+id/imageButton3"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnFavoritos"
+            android:background="#E6E6FA"
             android:src="@drawable/favorito"></ImageButton>
 
         <ImageButton
+            android:onClick="BtnPerfil"
             android:id="@+id/imageButton4"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnPerfil"
+            android:background="#E6E6FA"
             android:src="@drawable/perfil"></ImageButton>
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
-            android:onClick="BtnBuscar"
+            android:background="#E6E6FA"
             android:src="@drawable/back"></ImageButton>
+
 
     </LinearLayout>
 

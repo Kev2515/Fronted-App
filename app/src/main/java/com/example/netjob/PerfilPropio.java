@@ -7,14 +7,43 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class PerfilPropio extends AppCompatActivity {
 
+
+    TextView nombre;
+    TextView apellidos;
+    TextView correo;
+    TextView localidad;
+    TextView formacion;
+    TextView profesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_propio);
+
+        nombre = findViewById(R.id.nombre);
+        apellidos = findViewById(R.id.apellidos);
+        correo = findViewById(R.id.correo);
+        localidad = findViewById(R.id.localidad);
+        formacion = findViewById(R.id.formacion);
+        profesion = findViewById(R.id.profesion);
+
+
+        String dato = getIntent().getStringExtra("nombre");
+        nombre.setText("Nombre: " + dato);
+        String dato1 = getIntent().getStringExtra("apellidos");
+        apellidos.setText("Apellidos: " + dato1);
+        String dato2 = getIntent().getStringExtra("correo");
+        correo.setText("Correo: " + dato2);
+        String dato3 = getIntent().getStringExtra("localidad");
+        localidad.setText("Localidad: " + dato3);
+        String dato4 = getIntent().getStringExtra("formacion");
+        formacion.setText("Formaciòn: " + dato4);
+        String dato5 = getIntent().getStringExtra("profesion");
+        profesion.setText("Profesiòn: " + dato5);
 
 
     }

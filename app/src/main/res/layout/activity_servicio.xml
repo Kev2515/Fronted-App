@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="19dp"
         android:alpha="0.8"
-        android:background="@android:color/darker_gray"
+        android:background="#A381BD"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp"
@@ -29,7 +29,7 @@
             android:layout_marginStart="150dp"
             android:layout_marginEnd="150dp"
             android:src="@drawable/usuario"
-            app:civ_border_color="#FF000000"
+            android:background="#A381BD"
             app:civ_border_width="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="#E6E6FA"
         android:alpha="1"
         android:gravity="center"
         android:orientation="horizontal"
@@ -89,7 +89,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
+            android:background="#E6E6FA"
             android:src="@drawable/inicio"></ImageButton>
 
         <ImageButton
@@ -98,7 +98,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
+            android:background="#E6E6FA"
             android:src="@drawable/buzon"></ImageButton>
 
         <ImageButton
@@ -107,7 +107,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
+            android:background="#E6E6FA"
             android:src="@drawable/favorito"></ImageButton>
 
         <ImageButton
@@ -116,16 +116,16 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
+            android:background="#E6E6FA"
             android:src="@drawable/perfil"></ImageButton>
-
         <ImageButton
-            android:onClick="BtnBuscar"
             android:id="@+id/imageButton2"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginHorizontal="12dp"
-            android:background="@color/design_default_color_on_primary"
+            android:background="#E6E6FA"
             android:src="@drawable/back"></ImageButton>
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

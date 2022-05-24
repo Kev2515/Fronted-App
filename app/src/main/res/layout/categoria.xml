@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/categoriaName"
         android:text="Categoría"
-        android:textSize="22dp"
+        android:textSize="15dp"
         android:layout_marginTop="2dp"/>
 
 </LinearLayout>

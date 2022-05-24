@@ -21,7 +21,7 @@ public class MainActivity2 extends AppCompatActivity  {
     }
 
     public void GotoAcceso(View view) {
-        Intent intent = new Intent(this, Login.class);
+        Intent intent = new Intent(this, Inicio.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }

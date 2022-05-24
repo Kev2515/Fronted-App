@@ -28,11 +28,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Historial de Contratos"
-            android:textAlignment="viewStart"
-            android:textSize="18dp"
-            tools:ignore="MissingConstraints"/>
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp"
+            android:text="Historial de contratos"
+            android:textSize="22dp" />
 
         <GridView
             android:id="@+id/estadoContrato"

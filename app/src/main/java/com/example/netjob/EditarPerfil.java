@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -16,6 +17,13 @@ public class EditarPerfil extends AppCompatActivity {
 
     Spinner spinProvincias;
 
+    EditText nombre;
+    EditText apellidos;
+    EditText correo;
+    EditText localidad;
+    EditText formacion;
+    EditText profesion;
+
     public Button NuevoServicio;
     public Button MisServicios;
 
@@ -23,6 +31,13 @@ public class EditarPerfil extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_perfil);
+
+        nombre = findViewById(R.id.nombre);
+        apellidos = findViewById(R.id.apellidos);
+        correo = findViewById(R.id.correo);
+        localidad = findViewById(R.id.localidad);
+        formacion = findViewById(R.id.formacion);
+        profesion = findViewById(R.id.profesion);
 
         NuevoServicio = findViewById(R.id.button);
         MisServicios = findViewById(R.id.BtnMisServicios);
@@ -81,5 +96,15 @@ public class EditarPerfil extends AppCompatActivity {
     }
 
     public void guardarCambios(View view) {
+
+        Intent intent = new Intent(this, PerfilPropio.class);
+        intent.putExtra("nombre", nombre.getText().toString());
+        intent.putExtra("apellidos", apellidos.getText().toString());
+        intent.putExtra("correo", correo.getText().toString());
+        intent.putExtra("localidad", localidad.getText().toString());
+        intent.putExtra("formacion", formacion.getText().toString());
+        intent.putExtra("profesion", profesion.getText().toString());
+        startActivity(intent);
+
     }
 }

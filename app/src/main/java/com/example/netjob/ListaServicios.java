@@ -1,21 +1,19 @@
 package com.example.netjob;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.netjob.Model.DestacadoAdapter;
 import com.example.netjob.Model.Servicio;
-import com.example.netjob.Model.Servicios;
 import com.example.netjob.Utils.Apis;
 import com.example.netjob.Utils.ServicioService;
-import com.example.netjob.databinding.ActivityListaServiciosBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,14 +24,10 @@ import retrofit2.Response;
 
 public class ListaServicios extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    ActivityListaServiciosBinding binding;
-
-    GridView listaServicios;
+    RecyclerView recycler;
     List<Servicio> servicios = new ArrayList<>();
-    ServicioAdapter servicioAdapter;
     ServicioService servicioService;
-    String category;
-    String parametro;
+    int id;
     String token;
 
     @Override
@@ -43,39 +37,47 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
 
         servicioService = Apis.getServicioService();
 
-        listaServicios = findViewById(R.id.servicioOfrecido);
-        listaServicios.setOnItemClickListener(this);
+        recycler= findViewById(R.id.recycler);
 
         token = getIntent().getStringExtra("token");
-        category = getIntent().getStringExtra("category");
-        parametro = getIntent().getStringExtra("parametro");
+        id = getIntent().getIntExtra("id", 0);
 
+        ListarServicios();
+
+        //parametro = getIntent().getStringExtra("parametro");
+
+        /*
         if (category == null) {
             ListarServicioPorParametro();
         } else {
             ListarCategoriaPorCategoria();
         }
+         */
     }
-    public void ListarCategoriaPorCategoria(){
-        Call<List<Servicio>> call=servicioService.getServiciosPorCategoria(category, "Bearer "+ token, "application/json" );
+
+    public void ListarServicios(){
+        Call<List<Servicio>> call=servicioService.getServiciosPorParametro(id ,"Bearer "+ token, "application/json" );
         call.enqueue(new Callback<List<Servicio>>() {
             @Override
             public void onResponse(Call<List<Servicio>> call, Response<List<Servicio>> response) {
                 servicios = response.body();
-                servicioAdapter = new ServicioAdapter(ListaServicios.this, R.layout.servicio, servicios);
-                listaServicios.setAdapter(servicioAdapter);
-                Log.d("Servicios por categoria", response.body().toString());
-                Log.d("status", response.toString());
+                DestacadoAdapter ServicioAdapter = new DestacadoAdapter((servicios));
+                RecyclerView recyclerViewDestacados = findViewById(R.id.recycler);
+                recyclerViewDestacados.setAdapter(ServicioAdapter);
+                recyclerViewDestacados.setLayoutManager(new LinearLayoutManager(ListaServicios.this, LinearLayoutManager.VERTICAL, false));
+                Log.d("Servicio ejemplo", servicios.toString());
+                //Log.d("status", response.toString());
             }
 
             @Override
             public void onFailure(Call<List<Servicio>> call, Throwable t) {
-                Log.d("response", t.getMessage());
+                //Log.d("response", t.getMessage());
             }
         });
 
     }
 
+    /*
     public void ListarServicioPorParametro(){
         Call<List<Servicio>> call=servicioService.getServiciosPorParametro(parametro, "Bearer "+ token, "application/json");
         call.enqueue(new Callback<List<Servicio>>() {
@@ -96,6 +98,7 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
         });
 
     }
+*/
 
 
     @Override

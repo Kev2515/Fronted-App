@@ -23,6 +23,7 @@ import com.example.netjob.Utils.CategoriaService;
 import com.example.netjob.Utils.DestacadoService;
 import com.example.netjob.databinding.ActivityHomeBinding;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,8 +73,8 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
                 Toast.makeText(Home.this, "Buscando " + categorias.get(position).getName(), Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Home.this, ListaServicios.class);
-                intent.putExtra("category" , categorias.get(position).getName());
-                Log.d("category", categorias.get(position).getName());
+                intent.putExtra("id" , categorias.get(position).getId());
+                //Log.d("id", String.valueOf(categorias.get(position).getId()));
                 intent.putExtra("token" , token);
                 startActivity(intent);
                 finish();
@@ -103,7 +104,7 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
 
             @Override
             public void onFailure(Call<List<Categoria>> call, Throwable t) {
-                Log.d("response", t.getMessage());
+               // Log.d("response", t.getMessage());
             }
         });
     }
@@ -123,7 +124,7 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
 
             @Override
             public void onFailure(Call<List<Servicio>> call, Throwable t) {
-                Log.d("response", t.getMessage());
+                //Log.d("response", t.getMessage());
             }
         });
     }
@@ -134,7 +135,7 @@ public class Home extends AppCompatActivity implements AdapterView.OnItemClickLi
 
         Intent intent = new Intent(Home.this, ListaServicios.class);
         intent.putExtra("category" , categorias.get(position).getName());
-        Log.d("id", String.valueOf(position));
+        //Log.d("id", String.valueOf(position));
         intent.putExtra("id" , position);
         startActivity(intent);
         finish();

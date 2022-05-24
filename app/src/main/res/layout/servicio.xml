@@ -35,9 +35,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:hint="Linea 2"
+                android:hint="descripcion"
                 android:textSize="14dp"
-                android:id="@+id/linea2"/>
+                android:id="@+id/descripcionServicio"/>
         </LinearLayout>
 
 

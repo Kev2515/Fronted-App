@@ -56,6 +56,28 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
          */
     }
 
+
+    public void ListarServicios(){
+
+        switch (id){
+            case 1:
+                servicios.add(new Servicio("Fontanero Paco", "desatasco lo que sea", R.drawable.fontaneros));
+                break;
+            case 2:
+                servicios.add(new Servicio("Informatico Paco", "compilo lo que sea", R.drawable.info));
+                break;
+        }
+
+        ServicioRecycler ServicioAdapter = new ServicioRecycler((servicios));
+        RecyclerView recyclerViewDestacados = findViewById(R.id.recycler);
+        recyclerViewDestacados.setAdapter(ServicioAdapter);
+        recyclerViewDestacados.setLayoutManager(new LinearLayoutManager(ListaServicios.this, LinearLayoutManager.VERTICAL, false));
+
+
+    }
+
+
+    /*
     public void ListarServicios(){
         Call<List<Servicio>> call=destacadoService.getServicios("Bearer "+ token, "application/json" );
         call.enqueue(new Callback<List<Servicio>>() {
@@ -77,7 +99,7 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
         });
 
     }
-
+    */
     /*
     public void ListarServicioPorParametro(){
         Call<List<Servicio>> call=servicioService.getServiciosPorParametro(parametro, "Bearer "+ token, "application/json");

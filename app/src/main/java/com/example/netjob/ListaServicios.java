@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.netjob.Model.DestacadoAdapter;
 import com.example.netjob.Model.Servicio;
 import com.example.netjob.Utils.Apis;
+import com.example.netjob.Utils.DestacadoService;
 import com.example.netjob.Utils.ServicioService;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
 
     RecyclerView recycler;
     List<Servicio> servicios = new ArrayList<>();
-    ServicioService servicioService;
+    DestacadoService destacadoService;
     int id;
     String token;
 
@@ -35,7 +36,7 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_servicios);
 
-        servicioService = Apis.getServicioService();
+        destacadoService = Apis.getDestacadoService();
 
         recycler= findViewById(R.id.recycler);
 
@@ -56,7 +57,7 @@ public class ListaServicios extends AppCompatActivity implements AdapterView.OnI
     }
 
     public void ListarServicios(){
-        Call<List<Servicio>> call=servicioService.getServiciosPorParametro(id ,"Bearer "+ token, "application/json" );
+        Call<List<Servicio>> call=destacadoService.getServicios("Bearer "+ token, "application/json" );
         call.enqueue(new Callback<List<Servicio>>() {
             @Override
             public void onResponse(Call<List<Servicio>> call, Response<List<Servicio>> response) {
